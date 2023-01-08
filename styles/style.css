@@ -28,15 +28,13 @@ a {
     color: var(--burgundy)
 }
 
-@media screen and (max-width: 1200px) {
-    header {
-        display: none;
-    }
-}
+@media screen and (max-width: 1200px) {}
 
 #header-logo {
     display: block;
     width  : 100vw;
+    max-height: 350px;
+    object-fit: cover;
 }
 
 nav {
@@ -106,7 +104,38 @@ nav li a {
     }
 }
 
-@media screen and (max-width: 1200px) {
+
+@media (min-width: 500px) and (max-width: 1200px) {
+    nav ul {
+        width : 100%;
+        margin: 0;
+    }
+
+    nav li a {
+        display        : block;
+        color          : white;
+        text-decoration: none;
+        padding        : 0 20px;
+        height         : 60px;
+        line-height    : 60px;
+    }
+
+    nav li a:hover {
+        background-color: white;
+        color           : var(--burgundy);
+        transition      : 0.3s ease;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        display: none;
+    }
+
     nav ul {
         width     : 100%;
         margin    : 0;
