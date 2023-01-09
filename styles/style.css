@@ -231,7 +231,7 @@ nav li a {
     #youtube {
         display: none;
     }
-    
+
 }
 
 main h1 {
@@ -247,10 +247,17 @@ footer p {
     font-size: min(16px, 2vw);
 }
 
-#jfu-footer {
-    height    : min(200px, 20vw);
-    width     : min(835px, 100vw);
+#footer-logo {
+    height    : min(100px, 10vw);
+    width     : min(350px, 35vw);
     object-fit: cover;
+}
+
+#footer-copyright {
+    height    : min(50px, 5vw);
+    width     : min(835px, 90vw);
+    object-fit: cover;
+    margin-top: 10px;
 }
 
 .socialmedia-icon {
@@ -258,8 +265,9 @@ footer p {
 }
 
 .socialmedia-icon img {
-    height        : 100px;
+    height        : min(60px, 10vw);
     vertical-align: bottom;
+    margin        : 10px;
 }
 
 .socialmedia-icon:hover {
