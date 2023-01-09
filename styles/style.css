@@ -255,7 +255,39 @@ footer p {
     text-decoration: none;
     padding        : 10px 20px;
     margin         : 5px;
-    border-radius  : 20px;
+    border-radius  : 10px;
+}
+
+@media screen and (min-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+    .btn {
+        width: calc(100vw - 60px);
+    }
+}
+
+.btn-home {
+    display: inline-block;
+    background-color: var(--burgundy);
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    width: calc(50vw - 90px);
+    height: calc(50vw - 90px);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 5px;
+}
+
+.btn-home i {
+    display: block;
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.btn-home p {
+    font-size: 20px;
 }
 
 .btn:hover {
