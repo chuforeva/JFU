@@ -14,7 +14,7 @@ html {
     min-height: 100%;
 }
 
-#background {
+body {
     min-height         : 100%;
     color              : var(--text);
     background-image   : url('../images/bg_1.png'), url('../images/bg_2.png'), linear-gradient(to bottom right, var(--eggretwhite), white);
@@ -28,13 +28,18 @@ a {
     color: var(--burgundy)
 }
 
-@media screen and (max-width: 1200px) {}
+header {
+    width     : 100%;
+    text-align: center;
+    margin-top: 40px;
+}
 
 #header-logo {
-    display: block;
-    width  : 100vw;
-    max-height: 350px;
-    object-fit: cover;
+    display        : inline-block;
+    width          : min(834px, 100vw);
+    height         : min(350px, 40vw);
+    object-fit     : cover;
+    object-position: 0 40%;
 }
 
 nav {
@@ -42,6 +47,9 @@ nav {
     background-color: var(--burgundy);
     color           : white;
     width           : 100%;
+    position        : fixed;
+    top             : 0;
+    z-index         : 100;
 }
 
 nav ul {
@@ -67,21 +75,17 @@ nav li a {
 .nav-logo img {
     display    : block;
     filter     : brightness(0) invert(1);
-    height     : 50px;
-    line-height: 50px;
-    width      : 350px;
+    height     : 40px;
+    line-height: 40px;
+    width      : 300px;
     object-fit : cover;
-    margin-left: -35px;
-}
-
-.nav-menu {
-    padding: 0 20px;
+    margin-left: -50px;
 }
 
 @media screen and (min-width: 1200px) {
     nav ul {
-        max-width: 1200px;
-        margin   : 0 calc(50vw - 600px);
+        width : min(100%, 1200px);
+        margin: 0 max(0, calc(50vw - 600px));
     }
 
     nav li a {
@@ -101,6 +105,10 @@ nav li a {
 
     .nav-mobile {
         display: none;
+    }
+
+    .nav-pc {
+        display: inline-block;
     }
 }
 
@@ -129,13 +137,13 @@ nav li a {
     .nav-mobile {
         display: none;
     }
+
+    .nav-pc {
+        display: inline-block;
+    }
 }
 
 @media screen and (max-width: 500px) {
-    header {
-        display: none;
-    }
-
     nav ul {
         width     : 100%;
         margin    : 0;
@@ -143,17 +151,23 @@ nav li a {
     }
 
     nav li a {
-        height     : 50px;
-        line-height: 50px;
+        height     : 40px;
+        line-height: 40px;
+        padding    : 0 10px;
+    }
+
+    nav li a:hover {
+        background-color: var(--burgundy);
+        color           : white;
     }
 
     .nav-pc {
         display: none;
     }
-}
 
-header h1 {
-    margin: 50px 0;
+    .nav-mobile {
+        display: inline-block;
+    }
 }
 
 @media screen and (min-width: 1200px) {
