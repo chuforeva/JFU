@@ -178,6 +178,49 @@ nav li a {
     }
 }
 
+#menu {
+    height: 100vh;
+    color: white;
+    text-align: center;
+    max-height: 0;
+    overflow     : hidden;
+    transition   : max-height 0.2s ease;
+}
+
+#menu-logo {
+    filter:brightness(0) invert(1);
+    height: 100px;
+    width: 50vw;
+    margin: 0 calc(25vw);
+    object-fit: cover;
+}
+
+.btn-menu {
+    display: block;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    width: calc(100% - 80px);
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 40px;
+}
+
+.btn-menu:hover {
+    background-color: white;
+    color: var(--burgundy);
+    transition: 0.3s ease;
+}
+
+#menu hr {
+    width: calc(100% - 80px);
+    margin: 40px;
+}
+
+#menu h1 {
+    margin-bottom: 20px;
+}
+
 @media screen and (min-width: 1200px) {
     main {
         max-width: 1200px;
