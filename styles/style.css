@@ -38,7 +38,7 @@ header {
 #header-logo {
     display        : inline-block;
     width          : min(650px, 80vw);
-    height         : min(350px, 40vw);
+    height         : min(250px, 27vw);
     object-fit     : cover;
     object-position: 0 40%;
 }
@@ -221,10 +221,17 @@ nav li a {
 }
 
 #youtube {
-    width : min(calc(100vw - 60px), 800px);
-    height: min(56vw - 33px, 450px);
-    margin: 50px 20px 80px 20px;
+    width        : min(calc(100vw - 60px), 800px);
+    height       : min(56vw - 33px, 450px);
+    margin       : 20px 20px 0px 20px;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 500px) {
+    #youtube {
+        display: none;
+    }
+    
 }
 
 main h1 {
