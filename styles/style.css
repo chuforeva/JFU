@@ -22,6 +22,7 @@ body {
     background-repeat  : no-repeat, no-repeat, no-repeat;
     background-size    : min(500px, 100%), min(500px, 100%), 100%;
     padding-bottom     : 20px;
+    color: var(--burgundy)
 }
 
 a {
@@ -40,6 +41,11 @@ header {
     height         : min(350px, 40vw);
     object-fit     : cover;
     object-position: 0 40%;
+}
+
+#home-slogan {
+    font-family: 'Gowun Batang', serif;
+    font-weight: bold;
 }
 
 nav {
@@ -77,9 +83,9 @@ nav li a {
     filter     : brightness(0) invert(1);
     height     : 40px;
     line-height: 40px;
-    width      : 300px;
+    width      : 250px;
     object-fit : cover;
-    margin-left: -50px;
+    margin-left: -40px;
 }
 
 @media screen and (min-width: 1200px) {
