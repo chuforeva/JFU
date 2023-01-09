@@ -187,14 +187,14 @@ nav li a {
 
 @media screen and (max-width: 1200px) {
     main {
-        margin: 5px;
+        margin: 10px;
     }
 }
 
 .img-slider {
     width     : 100%;
     text-align: center;
-    margin: 50px 0;
+    margin    : 50px 0;
 }
 
 .slider-img {
@@ -221,9 +221,10 @@ nav li a {
 }
 
 #youtube {
-    width : min(calc(100vw - 40px), 800px);
-    height: min(56vw - 22px, 450px);
-    margin: 50px 20px;
+    width : min(calc(100vw - 60px), 800px);
+    height: min(56vw - 33px, 450px);
+    margin: 50px 20px 80px 20px;
+    border-radius: 10px;
 }
 
 main h1 {
@@ -263,15 +264,19 @@ footer p {
     display        : inline-block;
     text-decoration: none;
     padding        : 10px 20px;
-    margin         : 10px 5px;
     border-radius  : 10px;
 }
 
-@media screen and (min-width: 500px) {}
+@media screen and (min-width: 500px) {
+    .btn {
+        margin: 10px 5px;
+    }
+}
 
 @media screen and (max-width: 500px) {
     .btn {
-        width: calc(100vw - 60px);
+        margin: 10px;
+        width : calc(100vw - 100px);
     }
 }
 
