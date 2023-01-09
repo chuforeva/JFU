@@ -251,13 +251,14 @@ footer p {
     height    : min(100px, 10vw);
     width     : min(350px, 35vw);
     object-fit: cover;
+    margin-bottom: -5px;
 }
 
 #footer-copyright {
     height    : min(50px, 5vw);
     width     : min(835px, 90vw);
     object-fit: cover;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .socialmedia-icon {
@@ -267,7 +268,7 @@ footer p {
 .socialmedia-icon img {
     height        : min(60px, 10vw);
     vertical-align: bottom;
-    margin        : 10px;
+    /* margin        : 10px; */
 }
 
 .socialmedia-icon:hover {
