@@ -22,7 +22,7 @@ body {
     background-repeat  : no-repeat, no-repeat, no-repeat;
     background-size    : min(500px, 100%), min(500px, 100%), 100%;
     padding-bottom     : 20px;
-    color: var(--burgundy)
+    color              : var(--burgundy)
 }
 
 a {
@@ -79,13 +79,15 @@ nav li a {
 }
 
 .nav-logo img {
-    display    : block;
-    filter     : brightness(0) invert(1);
-    height     : 40px;
-    line-height: 40px;
-    width      : 250px;
-    object-fit : cover;
-    margin-left: -40px;
+    display       : block;
+    filter        : brightness(0) invert(1);
+    height        : 40px;
+    line-height   : 40px;
+    /* width      : 250px; */
+    width         : 75px;
+    object-fit    : cover;
+    /* margin-left: -40px; */
+    margin-left   : -25px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -260,12 +262,11 @@ footer p {
     display        : inline-block;
     text-decoration: none;
     padding        : 10px 20px;
-    margin         : 5px;
+    margin         : 10px 5px;
     border-radius  : 10px;
 }
 
-@media screen and (min-width: 500px) {
-}
+@media screen and (min-width: 500px) {}
 
 @media screen and (max-width: 500px) {
     .btn {
@@ -274,21 +275,21 @@ footer p {
 }
 
 .btn-home {
-    display: inline-block;
+    display         : inline-block;
     background-color: var(--burgundy);
-    text-decoration: none;
-    color: white;
-    text-align: left;
-    width: calc(50vw - 90px);
-    height: calc(50vw - 90px);
-    border-radius: 20px;
-    padding: 30px;
-    margin: 5px;
+    text-decoration : none;
+    color           : white;
+    text-align      : left;
+    width           : calc(50vw - 90px);
+    height          : calc(50vw - 90px);
+    border-radius   : 20px;
+    padding         : 30px;
+    margin          : 5px;
 }
 
 .btn-home i {
-    display: block;
-    font-size: 80px;
+    display      : block;
+    font-size    : 80px;
     margin-bottom: 15px;
 }
 
