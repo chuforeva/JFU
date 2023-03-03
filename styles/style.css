@@ -497,6 +497,9 @@ footer p {
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    .guide-image {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -507,6 +510,10 @@ footer p {
         margin-top: 80px;
         margin-bottom: 30px;
     }
+    .guide-image {
+        width: calc(100% + 40px);
+        margin-left: -20px;
+    }
 }
 
 .guide-text {
@@ -515,8 +522,4 @@ footer p {
 
 .guide-text ul {
     margin-left: 20px;
-}
-
-.guide-image {
-    width: 100%;
 }
