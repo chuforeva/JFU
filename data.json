@@ -1,0 +1,59 @@
+{
+    "nav": [{
+            "title": "TODAY'S TO DO LIST",
+            "link": "javascript:comingsoon()"
+        },
+        {
+            "title": "ONE CLICK STREAMING LIST",
+            "link": "javascript:comingsoon()"
+        },
+        {
+            "title": "STREAMING GUIDE",
+            "link": [{
+                    "title": "음원 스트리밍 가이드",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "음원 다운로드 가이드",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "음원 선물하기 가이드",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "뮤비 스트리밍 가이드",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "음원사이트 스트리밍권",
+                    "link": "javascript:comingsoon()"
+                }
+            ]
+        },
+        {
+            "title": "VOTING GUIDE",
+            "link": [{
+                    "title": "투표앱 사용 가이드",
+                    "link": "/guides/voting-app-guide.html"
+                },
+                {
+                    "title": "쇼! 음악중심 사전/실시간 투표",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "인기가요 사전/실시간 투표",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "멜론 주간 인기상 투표",
+                    "link": "javascript:comingsoon()"
+                },
+                {
+                    "title": "라디오 신청 가이드",
+                    "link": "javascript:comingsoon()"
+                }
+            ]
+        }
+    ]
+}

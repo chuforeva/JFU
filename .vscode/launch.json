@@ -5,10 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "type": "node",
             "request": "launch",
-            "name": "Open music-streaming-guide.html",
-            "file": "e:\\BLACKPINK\\JISOO FAN UNION\\JFU\\index.html"
+            "name": "프로그램 시작",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server.js"
         }
     ]
 }

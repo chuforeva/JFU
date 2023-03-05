@@ -25,6 +25,24 @@ body {
     color: var(--burgundy)
 }
 
+@media (min-width: 500px) {
+    .pc {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .pc {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+}
+
 a {
     color: var(--burgundy)
 }
@@ -133,15 +151,18 @@ nav li a {
         width: min(100%, 1200px);
         margin: 0 max(0, calc(50vw - 600px));
     }
-    nav li a {
+    nav li a,
+    .sub-menu {
         display: block;
         color: white;
         text-decoration: none;
         padding: 0 20px;
         height: 60px;
         line-height: 60px;
+        cursor: pointer;
     }
-    nav li a:hover {
+    nav li a:hover,
+    .sub-menu:hover {
         background-color: white;
         color: var(--burgundy);
         transition: 0.3s ease;
@@ -159,15 +180,18 @@ nav li a {
         width: 100%;
         margin: 0;
     }
-    nav li a {
+    nav li a,
+    .sub-menu {
         display: block;
         color: white;
         text-decoration: none;
         padding: 0 20px;
         height: 60px;
         line-height: 60px;
+        cursor: pointer;
     }
-    nav li a:hover {
+    nav li a:hover,
+    .sub-menu:hover {
         background-color: white;
         color: var(--burgundy);
         transition: 0.3s ease;
@@ -264,6 +288,17 @@ nav li a {
 
 #menu h1 {
     margin-bottom: 20px;
+}
+
+.sub-menu.active {
+    background-color: white;
+    color: var(--burgundy);
+}
+
+.nav-pc-sub {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
 }
 
 @media screen and (min-width: 1200px) {
