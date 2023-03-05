@@ -35,7 +35,7 @@ function insertHeader() {
     if (window.location.pathname != "/index.html" && window.location.pathname != "/") {
         var headers = document.getElementsByTagName("header");
         for (header of headers) {
-            header.innerHTML = `<a href="${window.location.origin}/index.html"><img class="pc-page-header" src="${window.location.origin}/images/logos/JFU_logo_5.png"></a>`;
+            header.innerHTML = `<a href="${window.location.origin}"><img class="pc-page-header" src="${window.location.origin}/images/logos/JFU_logo_5.png"></a>`;
         }
     }
 }
@@ -46,13 +46,13 @@ function insertNavMobile() {
         .then((json) => {
             var html = `<ul>
                         <li class="nav-mobile nav-logo">
-                            <a href="${window.location.origin}/index.html"><img src="${window.location.origin}/images/logos/JFU_logo_4.png"></a>
+                            <a href="${window.location.origin}"><img src="${window.location.origin}/images/logos/JFU_logo_4.png"></a>
                         </li>
                         <li class="nav-mobile nav-menu"><a href="javascript:menu()"><i class="fa-solid fa-bars"></i></a></li>
                     </ul>
                     <div id="menu">
                         <img src="${window.location.origin}/images/logos/JFU_logo_5.png" id="menu-logo">
-                        <a href="${window.location.origin}/index.html" class="btn-menu">HOME</a>
+                        <a href="${window.location.origin}" class="btn-menu">HOME</a>
                     `;
 
             for (li of json.nav) {
@@ -100,7 +100,7 @@ function insertNavPC() {
 
                 if (!Array.isArray(li.link)) {
                     if (li.link.includes("javascript")) {
-                        html += `<li class="nav-pc"><a href="${li.link}">${li.title}</a></li>`;
+                        html += `<li class="nav-pc btn-disable"><a href="${li.link}">${li.title}</a></li>`;
                     } else {
                         html += `<li class="nav-pc"><a href="${window.location.origin + li.link}">${li.title}</a></li>`;
                     }
@@ -113,7 +113,7 @@ function insertNavPC() {
 
                     for (sub of li.link) {
                         if (sub.link.includes("javascript")) {
-                            submenus += `<li><a href="${sub.link}">${sub.title}</a></li>`;
+                            submenus += `<li class="btn-disable"><a href="${sub.link}">${sub.title}</a></li>`;
                         } else {
                             submenus += `<li><a href="${window.location.origin + sub.link}">${sub.title}</a></li>`;
                         }
