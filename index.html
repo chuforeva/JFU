@@ -15,34 +15,7 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li class="nav-mobile nav-logo">
-                <a href="index.html"><img src="images/logos/JFU_logo_4.png"></a>
-            </li>
-            <li class="nav-mobile nav-menu"><a href="javascript:menu()"><i class="fa-solid fa-bars"></i></a></li>
-        </ul>
-        <div id="menu">
-            <img src="images/logos/JFU_logo_5.png" id="menu-logo">
-            <a href="index.html" class="btn-menu">HOME</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">TO DO LIST</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">ONE CLICK STREAMING LIST</a>
-            <hr>
-            <h1>STREAMING</h1>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 스트리밍 가이드</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 다운로드 가이드</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 선물하기 가이드</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">뮤비 스트리밍 가이드</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원사이트 스트리밍권</a>
-            <hr>
-            <h1>VOTING</h1>
-            <a href="guides/voting-app-guide.html" class="btn-menu">투표앱 사용 가이드</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">쇼! 음악중심 사전/실시간 투표</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">인기가요 사전/실시간 투표</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">멜론 주간 인기상 투표</a>
-            <a href="javascript:comingsoon()" class="btn-menu btn-disable">라디오 신청 가이드</a>
-        </div>
-    </nav>
+    <nav class="mobile"></nav>
 
     <header>
         <img src="images/logos/JFU_logo_5.png" alt="JFU Logo" id="header-logo">
@@ -69,24 +42,32 @@
     </div>
 
 
-    <main>
-        <div class="center box">
+    <main id="home-main">
+        <!-- <div class="center box">
             <a class="btn btn-primary btn-disable" href="javascript:comingsoon()" title="COMING SOON">TODAY'S TO DO LIST</a>
             <a class="btn btn-primary btn-disable" href="javascript:comingsoon()" title="COMING SOON">ONE CLICK STREAMING LIST</a>
-            <a class="btn btn-secondary" href="guides/streaming-guide.html" title="COMING SOON">STREAMING GUIDE</a>
-            <a class="btn btn-secondary" href="guides/voting-guide.html">VOTING GUIDE</a>
-        </div>
+
+            <h2>STREAMING GUIDE</h2>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">음원 스트리밍 가이드</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">음원 다운로드 가이드</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">음원 선물하기 가이드</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">뮤비 스트리밍 가이드</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">음원사이트 스트리밍권</a>
+
+            <h2>VOTING GUIDE</h2>
+            <a class="btn btn-secondary" href="voting-app-guide.html">투표앱 사용 가이드</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">쇼! 음악중심 사전/실시간 투표</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">인기가요 사전/실시간 투표</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">멜론 주간 인기상 투표</a>
+            <a class="btn btn-secondary btn-disable" href="javascript:comingsoon()" title="COMING SOON">라디오 신청 가이드</a>
+        </div> -->
     </main>
 
-    <footer>
-        <img src="images/logos/JFU_logo_5.png" alt="JFU Footer" id="footer-logo"><br>
-        <a href="https://twitter.com/Jisoo_Fan_Union" class="socialmedia-icon" target="_blank"><img src="images/icons/twitter_icon.png"></a>
-        <a href="https://www.youtube.com/@sooyaaa__" class="socialmedia-icon" target="_blank"><img src="images/icons/youtube_icon.png"></a>
-        <a href="http://pf.kakao.com/_Ybtrxj" class="socialmedia-icon" target="_blank"><img src="images/icons/kakao_icon.png"></a><br>
-        <img src="images/logos/JFU_footer_2.png" alt="JFU Footer" id="footer-copyright">
-    </footer>
+    <footer></footer>
 
     <script>
+        init();
+        insertMain();
         let slideIndex = 0;
         showSlides();
 
@@ -103,6 +84,40 @@
             }
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 5000);
+        }
+
+        function insertMain() {
+            fetch(window.location.origin + "/data.json")
+                .then((res) => res.json())
+                .then((json) => {
+                    var html = "<div class='center box'>";
+
+                    for (li of json.nav) {
+
+                        if (!Array.isArray(li.link)) {
+                            if (li.link.includes("javascript")) {
+                                html += `<a class="btn btn-primary btn-disable" href="${li.link}" title="COMING SOON">${li.title}</a>`;
+                            } else {
+                                html += `<a class="btn btn-primary" href="${window.location.origin + li.link}">${li.title}</a>`;
+                            }
+
+                        } else {
+                            html += `<h2>${li.title}</h2>`;
+                            for (sub of li.link) {
+                                if (sub.link.includes("javascript")) {
+                                    html += `<a class="btn btn-secondary btn-disable" href="${sub.link}" title="COMING SOON">${sub.title}</a>`;
+                                } else {
+                                    html += `<a class="btn btn-secondary" href="${window.location.origin + sub.link}" title="COMING SOON">${sub.title}</a>`;
+                                }
+
+                            }
+                        }
+                    }
+                    html += `</div>`;
+
+                    var main = document.getElementById("home-main");
+                    main.innerHTML = html;
+                });
         }
     </script>
 </body>

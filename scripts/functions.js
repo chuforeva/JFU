@@ -25,84 +25,20 @@ function getHost() {
 }
 
 function init() {
+    insertHeader();
     insertNavMobile();
     insertNavPC();
+    insertFooter();
 }
 
-function insertNavPC() {
-    fetch(window.location.origin + "/data.json")
-        .then((res) => res.json())
-        .then((json) => {
-            var html = "<ul>";
-            var submenus = "";
-
-            for (li of json.nav) {
-
-                if (!Array.isArray(li.link)) {
-                    if (li.link.includes("javascript")) {
-                        html += `<li class="nav-pc"><a href="${li.link}">${li.title}</a></li>`;
-                    } else {
-                        html += `<li class="nav-pc"><a href="${window.location.origin + li.link}">${li.title}</a></li>`;
-                    }
-
-                } else {
-                    html += `<li class="nav-pc">
-                                <div class="sub-menu" data-id="${li.title}" onclick="triggerSubMenu(this)">${li.title} <i class="fa-solid fa-angle-down"></i></div>
-                            </li>`;
-                    submenus += `<ul class="nav-pc-sub" data-id="${li.title}" data-show="false">`;
-
-                    for (sub of li.link) {
-                        if (sub.link.includes("javascript")) {
-                            submenus += `<li><a href="${sub.link}">${sub.title}</a></li>`;
-                        } else {
-                            submenus += `<li><a href="${window.location.origin + sub.link}">${sub.title}</a></li>`;
-                        }
-
-                    }
-                    submenus += `</ul>`;
-                }
-            }
-            html += `</ul>`;
-
-            var navs = document.getElementsByTagName("nav");
-            for (nav of navs) {
-                if (nav.classList.contains("pc")) {
-                    nav.innerHTML = html + submenus;
-                }
-            }
-        });
+function insertHeader() {
+    if (window.location.pathname != "/index.html" && window.location.pathname != "/") {
+        var headers = document.getElementsByTagName("header");
+        for (header of headers) {
+            header.innerHTML = `<a href="${window.location.origin}/index.html"><img class="pc-page-header" src="${window.location.origin}/images/logos/JFU_logo_5.png"></a>`;
+        }
+    }
 }
-
-/* 
-<nav class="mobile">
-    <ul>
-        <li class="nav-mobile nav-logo">
-            <a href="../index.html"><img src="../images/logos/JFU_logo_4.png"></a>
-        </li>
-        <li class="nav-mobile nav-menu"><a href="javascript:menu()"><i class="fa-solid fa-bars"></i></a></li>
-    </ul>
-    <div id="menu">
-        <img src="../images/logos/JFU_logo_5.png" id="menu-logo">
-        <a href="../index.html" class="btn-menu">HOME</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">TO DO LIST</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">ONE CLICK STREAMING LIST</a>
-        <hr>
-        <h1>STREAMING</h1>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 스트리밍 가이드</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 다운로드 가이드</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원 선물하기 가이드</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">뮤비 스트리밍 가이드</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">음원사이트 스트리밍권</a>
-        <hr>
-        <h1>VOTING</h1>
-        <a href="voting-app-guide.html" class="btn-menu">투표앱 사용 가이드</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">쇼! 음악중심 사전/실시간 투표</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">인기가요 사전/실시간 투표</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">멜론 주간 인기상 투표</a>
-        <a href="javascript:comingsoon()" class="btn-menu btn-disable">라디오 신청 가이드</a>
-    </div>
-</nav>
-*/
 
 function insertNavMobile() {
     fetch(window.location.origin + "/data.json")
@@ -153,6 +89,60 @@ function insertNavMobile() {
         });
 }
 
+function insertNavPC() {
+    fetch(window.location.origin + "/data.json")
+        .then((res) => res.json())
+        .then((json) => {
+            var html = "<ul>";
+            var submenus = "";
+
+            for (li of json.nav) {
+
+                if (!Array.isArray(li.link)) {
+                    if (li.link.includes("javascript")) {
+                        html += `<li class="nav-pc"><a href="${li.link}">${li.title}</a></li>`;
+                    } else {
+                        html += `<li class="nav-pc"><a href="${window.location.origin + li.link}">${li.title}</a></li>`;
+                    }
+
+                } else {
+                    html += `<li class="nav-pc">
+                                <div class="sub-menu" data-id="${li.title}" onclick="triggerSubMenu(this)">${li.title} <i class="fa-solid fa-angle-down"></i></div>
+                            </li>`;
+                    submenus += `<ul class="nav-pc-sub" data-id="${li.title}" data-show="false">`;
+
+                    for (sub of li.link) {
+                        if (sub.link.includes("javascript")) {
+                            submenus += `<li><a href="${sub.link}">${sub.title}</a></li>`;
+                        } else {
+                            submenus += `<li><a href="${window.location.origin + sub.link}">${sub.title}</a></li>`;
+                        }
+
+                    }
+                    submenus += `</ul>`;
+                }
+            }
+            html += `</ul>`;
+
+            var navs = document.getElementsByTagName("nav");
+            for (nav of navs) {
+                if (nav.classList.contains("pc")) {
+                    nav.innerHTML = html + submenus;
+                }
+            }
+        });
+}
+
+function insertFooter() {
+    var footers = document.getElementsByTagName("footer");
+    for (footer of footers) {
+        footer.innerHTML = `<img src="${window.location.origin}/images/logos/JFU_logo_5.png" alt="JFU Footer" id="footer-logo"><br>
+                            <a href="https://twitter.com/Jisoo_Fan_Union" class="socialmedia-icon" target="_blank"><img src="${window.location.origin}/images/icons/twitter_icon.png"></a>
+                            <a href="https://www.youtube.com/@sooyaaa__" class="socialmedia-icon" target="_blank"><img src="${window.location.origin}/images/icons/youtube_icon.png"></a>
+                            <a href="http://pf.kakao.com/_Ybtrxj" class="socialmedia-icon" target="_blank"><img src="${window.location.origin}/images/icons/kakao_icon.png"></a><br>
+                            <img src="${window.location.origin}/images/logos/JFU_footer_2.png" alt="JFU Footer" id="footer-copyright">`;
+    }
+}
 
 function triggerSubMenu(div) {
     var subs = document.getElementsByClassName("nav-pc-sub");

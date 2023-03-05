@@ -74,6 +74,10 @@ header {
     font-weight: bold;
 }
 
+#home-main h2 {
+    margin: 30px 0 10px 0;
+}
+
 @media (min-width: 500px) {
     nav {
         display: block;
@@ -556,5 +560,7 @@ footer p {
 }
 
 .guide-text ul {
+    display: inline-block;
+    text-align: left;
     margin-left: 20px;
 }
