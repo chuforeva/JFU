@@ -54,6 +54,18 @@
                     "link": "javascript:comingsoon()"
                 }
             ]
+        },
+        {
+            "title": "SUPPORTERS KIT",
+            "link": [{
+                    "title": "KOREA",
+                    "link": "https://twitter.com/Jisoo_Fan_Union/status/1617900048976863232"
+                },
+                {
+                    "title": "INTERNATIONAL",
+                    "link": "https://twitter.com/Jisoo_Fan_Union/status/1617900087140835328"
+                }
+            ]
         }
     ]
 }

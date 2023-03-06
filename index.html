@@ -97,6 +97,10 @@
                         if (!Array.isArray(li.link)) {
                             if (li.link.includes("javascript")) {
                                 html += `<a class="btn btn-primary btn-disable" href="${li.link}" title="COMING SOON">${li.title}</a>`;
+
+                            } else if (li.link.includes("http")) {
+                                html += `<a class="btn btn-primary" href="${li.link}" target="_blank">${li.title}</a>`;
+
                             } else {
                                 html += `<a class="btn btn-primary" href="${window.location.origin + li.link}">${li.title}</a>`;
                             }
@@ -106,6 +110,10 @@
                             for (sub of li.link) {
                                 if (sub.link.includes("javascript")) {
                                     html += `<a class="btn btn-secondary btn-disable" href="${sub.link}" title="COMING SOON">${sub.title}</a>`;
+
+                                } else if (sub.link.includes("http")) {
+                                    html += `<a class="btn btn-secondary" href="${sub.link}" target="_blank">${sub.title}</a>`;
+
                                 } else {
                                     html += `<a class="btn btn-secondary" href="${window.location.origin + sub.link}" title="COMING SOON">${sub.title}</a>`;
                                 }
