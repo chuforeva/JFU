@@ -87,6 +87,9 @@ function insertNavMobile() {
                     html += `<hr>`;
                 }
             }
+            if (html.substring(html.length - 4, html.length) == "<hr>") {
+                html = html.substring(0, html.length - 4);
+            }
             html += `</div></nav>`;
 
             var navs = document.getElementsByTagName("nav");
