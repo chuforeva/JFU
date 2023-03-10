@@ -493,6 +493,10 @@ footer p {
     text-align: center;
 }
 
+.left {
+    text-align: left;
+}
+
 .box {
     margin: 10px 0 50px 0;
 }
@@ -513,6 +517,18 @@ footer p {
     .guide-image {
         width: 100%;
     }
+    .pc-col-4 {
+        display: inline-block;
+        width: 33%;
+    }
+    .pc-col-8 {
+        display: inline-block;
+        width: 66%;
+        vertical-align: top;
+    }
+    .pc-padding-20 {
+        padding: 0 20px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -527,6 +543,9 @@ footer p {
         width: calc(100% + 40px);
         margin-left: -20px;
     }
+    .pc-padding-20 {
+        padding: 20px 0;
+    }
 }
 
 .guide-text {
@@ -537,4 +556,10 @@ footer p {
     display: inline-block;
     text-align: left;
     margin-left: 20px;
+}
+
+.guide-image-phone {
+    width: 100%;
+    box-shadow: 0 0 10px black;
+    border-radius: 20px;
 }
