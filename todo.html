@@ -61,7 +61,7 @@
     }
 </style>
 
-<body>
+<body onload="loadTodo()">
 
     <nav class="mobile"></nav>
     <header></header>
@@ -104,8 +104,6 @@
 
     <script>
         init();
-        loadTodo();
-        openToday();
 
         function loadTodo() {
             fetch(window.location.origin + "/data.json")
@@ -184,6 +182,7 @@
                                 btn.appendChild(div2);
                             }
                         }
+                        openToday();
                     }
                 });
         }
