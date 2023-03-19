@@ -50,6 +50,10 @@
     .content p {
         margin-top: 20px;
     }
+    
+    .btn {
+        display: block !important;
+    }
 </style>
 
 <body onload="openToday()">
@@ -62,62 +66,112 @@
         <h1>TODAY'S TO DO LIST</h1>
         <button class="collapsible" data-id="1" onclick="toggle(this)">월요일 MONDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="1">
-            <a class="btn btn-secondary" href="https://m2.melon.com/popularsong/view.htm">인기가요 사전투표 (멜론 앱/모바일)</a>
-            <a class="btn btn-secondary" href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO">엠카운트다운 사전투표</a>
-            <a class="btn btn-secondary" href="https://freevote.kr/">인기가요 핫스테이지 투표 (프리보트 앱)</a>
-            <a class="btn btn-secondary" href="https://www.melon.com/melonaward/weekAward.htm">멜론 주간인기상 투표하기</a>
         </div>
 
         <button class="collapsible" data-id="2" onclick="toggle(this)">화요일 TUESDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="2">
-            <a class="btn btn-secondary" href="https://m2.melon.com/popularsong/view.htm">인기가요 사전투표 (멜론 앱/모바일)</a>
-            <a class="btn btn-secondary" href="https://freevote.kr/">인기가요 핫스테이지 투표 (프리보트)</a>
-            <a class="btn btn-secondary" href="https://www.melon.com/melonaward/weekAward.htm">멜론 주간인기상 투표하기</a>
-            <p>오후 6시 이후</p>
-            <a class="btn btn-secondary" href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO">쇼! 음악중심 글로벌 사전투표 (뮤빗 앱)</a>
-
         </div>
 
         <button class="collapsible" data-id="3" onclick="toggle(this)">수요일 WEDNESDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="3">
-            <a class="btn btn-secondary" href="#">인기가요 사전투표</a>
-            <a class="btn btn-secondary" href="#">인기가요 핫스테이지 투표</a>
-            <a class="btn btn-secondary" href="#">엠카운트다운 사전투표</a>
         </div>
 
         <button class="collapsible" data-id="4" onclick="toggle(this)">목요일 THURSDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="4">
-            <a class="btn btn-secondary" href="#">인기가요 사전투표</a>
-            <a class="btn btn-secondary" href="#">인기가요 핫스테이지 투표</a>
-            <a class="btn btn-secondary" href="#">엠카운트다운 사전투표</a>
         </div>
 
         <button class="collapsible" data-id="5" onclick="toggle(this)">금요일 FRIDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="5">
-            <a class="btn btn-secondary" href="#">인기가요 사전투표</a>
-            <a class="btn btn-secondary" href="#">인기가요 핫스테이지 투표</a>
-            <a class="btn btn-secondary" href="#">엠카운트다운 사전투표</a>
         </div>
 
         <button class="collapsible" data-id="6" onclick="toggle(this)">토요일 SATURDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="6">
-            <a class="btn btn-secondary" href="#">인기가요 사전투표</a>
-            <a class="btn btn-secondary" href="#">인기가요 핫스테이지 투표</a>
-            <a class="btn btn-secondary" href="#">엠카운트다운 사전투표</a>
         </div>
 
         <button class="collapsible" data-id="0" onclick="toggle(this)">일요일 SUNDAY <i class="fa-solid fa-angle-down"></i></button>
         <div class="content" data-id="0">
-            <a class="btn btn-secondary" href="#">인기가요 사전투표</a>
-            <a class="btn btn-secondary" href="#">인기가요 핫스테이지 투표</a>
-            <a class="btn btn-secondary" href="#">엠카운트다운 사전투표</a>
         </div>
+
+        <div id="test"></div>
     </main>
 
     <footer></footer>
 
     <script>
         init();
+        loadTodo();
+
+        function loadTodo() {
+            fetch(window.location.origin + "/data.json")
+                .then((res) => res.json())
+                .then((json) => {
+                    var test = document.getElementById("test");
+                    var todo = new Object();
+                    for (var i = 0; i < 7; i++) {
+                        todo[i] = new Array();
+                    }
+
+                    for (list of json.todo) {
+                        if (list.date != null) {
+                            if (list.date.end != null) {
+                                if (list.date.start.day < list.date.end.day) {
+                                    for (var i = list.date.start.day; i <= list.date.end.day; i++) {
+                                        todo[i].push(list);
+                                    }
+                                } else {
+                                    for (var i = list.date.start.day; i < 7; i++) {
+                                        todo[i].push(list);
+                                    }
+                                    for (var i = 0; i <= list.date.end.day; i++) {
+                                        todo[i].push(list);
+                                    }
+                                }
+                            } else {
+                                todo[list.date.start.day].push(list);
+                            }
+                        } else {
+                            for (var i = 0; i < 7; i++) {
+                                todo[i].push(list);
+                            }
+                        }
+                    }
+
+                    for (i in todo) {
+                        var btns = document.getElementsByClassName("content")
+                        for (btn of btns) {
+                            if (btn.getAttribute("data-id") == i) {
+                                for (l of todo[i]) {
+                                    var a = document.createElement("a");
+                                    a.classList.add("btn");
+                                    if (l.date != null) {
+                                        a.classList.add("btn-primary");
+                                    } else {
+                                        a.classList.add("btn-secondary");
+                                    }
+                                    a.setAttribute("href", l.link);
+
+                                    if (l.site == null) {
+                                        a.innerText = l.title;
+                                    } else {
+                                        if (l.date) {
+                                            if (l.date.start.day == i) {
+                                                a.innerText = l.title + " (" + l.site + " / " + l.date.start.time + " 이후)";
+                                            } else if (l.date.start.end == i) {
+                                                a.innerText = l.title + " (" + l.site + " / " + l.date.start.time + " 마감)";
+                                            } else {
+                                                a.innerText = l.title + " (" + l.site + ")";
+                                            }
+                                        } else {
+                                            a.innerText = l.title + " (" + l.site + ")";
+                                        }
+                                    }
+                                    btn.appendChild(a);
+                                }
+                            }
+                        }
+                    }
+                });
+        }
 
         function openToday() {
             var day = (new Date).getDay();

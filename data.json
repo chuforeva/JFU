@@ -19,7 +19,7 @@
                 },
                 {
                     "title": "음원 다운로드 가이드",
-                    "link": "javascript:comingsoon()"
+                    "link": "/guides/music-download-guide.html"
                 },
                 {
                     "title": "음원 선물하기 가이드",
@@ -70,6 +70,190 @@
                     "link": "https://twitter.com/Jisoo_Fan_Union/status/1617900087140835328"
                 }
             ]
+        }
+    ],
+    "todo": [{
+            "title": "인기가요 사전투표",
+            "site": "멜론 앱",
+            "link": "https://m2.melon.com/popularsong/view.htm",
+            "date": {
+                "start": {
+                    "day": 1,
+                    "time": "12:00"
+                },
+                "end": {
+                    "day": 6,
+                    "time": "23:59"
+                }
+            }
+        },
+        {
+            "title": "인기가요 실시간 앱 투표",
+            "site": "SUPERSTAR X 앱",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 0,
+                    "time": "15:50"
+                },
+                "end": null
+            }
+        },
+        {
+            "title": "뮤직뱅크 사전투표",
+            "site": "뮤빗 앱",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 1,
+                    "time": "11:00"
+                },
+                "end": {
+                    "day": 3,
+                    "time": "11:00"
+                }
+            }
+        },
+        {
+            "title": "쇼! 음악중심 글로벌 사전투표",
+            "site": "뮤빗 앱",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 2,
+                    "time": "18:00"
+                },
+                "end": {
+                    "day": 4,
+                    "time": "11:00"
+                }
+            }
+        },
+        {
+            "title": "쇼! 음악중심 시청자 위원회 투표",
+            "site": "음악중삼 홈페이지 (선정된 사람만)",
+            "link": "https://program.imbc.com/Info/musiccore",
+            "date": {
+                "start": {
+                    "day": 3,
+                    "time": "09:00"
+                },
+                "end": {
+                    "day": 4,
+                    "time": "11:00"
+                }
+            }
+        },
+        {
+            "title": "쇼! 음악중심 생방송 앱 투표",
+            "site": "뮤빗 앱",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 6,
+                    "time": "15:20"
+                },
+                "end": null
+            }
+        },
+        {
+            "title": "쇼! 음악중심 생방송 문자 투표",
+            "site": "#0505",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 6,
+                    "time": "15:20"
+                },
+                "end": null
+            }
+        },
+        {
+            "title": "엠카운트다운 사전투표",
+            "site": "엠넷플러스 홈페이지",
+            "link": "https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO",
+            "date": {
+                "start": {
+                    "day": 6,
+                    "time": "00:00"
+                },
+                "end": {
+                    "day": 1,
+                    "time": "23:59"
+                }
+            }
+        },
+        {
+            "title": "엠카운트다운 실시간 투표",
+            "site": "엠넷플러스 홈페이지",
+            "link": "https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO",
+            "date": {
+                "start": {
+                    "day": 4,
+                    "time": "18:15"
+                },
+                "end": null
+            }
+        },
+        {
+            "title": "멜론 주간인기상 투표",
+            "site": "멜론 앱",
+            "link": "https://www.melon.com/melonaward/weekAward.htm",
+            "date": {
+                "start": {
+                    "day": 1,
+                    "time": "18:00"
+                },
+                "end": {
+                    "day": 0,
+                    "time": "23:59"
+                }
+            }
+        },
+        {
+            "title": "인기가요 핫스테이지 투표",
+            "site": "SUPERSTAR X 앱",
+            "link": "",
+            "date": {
+                "start": {
+                    "day": 0,
+                    "time": "16:40"
+                },
+                "end": {
+                    "day": 3,
+                    "time": "18:00"
+                }
+            }
+        },
+        {
+            "title": "음원사이트 스트리밍",
+            "site": null,
+            "link": "/guides/music-streaming-guide.html",
+            "date": null
+        },
+        {
+            "title": "뮤직비디오 스트리밍",
+            "site": null,
+            "link": "/guides/mv-streaming-guide.html",
+            "date": null
+        },
+        {
+            "title": "라디오 사연신청",
+            "site": null,
+            "link": "/guides/radio-guide.html",
+            "date": null
+        },
+        {
+            "title": "뮤빗 하트비트 모으기",
+            "site": null,
+            "link": "/guides/voting-app-guide.html",
+            "date": null
+        },
+        {
+            "title": "SUPERSTAR X 루비 모으기",
+            "site": null,
+            "link": "/guides/voting-app-guide.html",
+            "date": null
         }
     ]
 }
