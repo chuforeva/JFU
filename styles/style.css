@@ -350,18 +350,16 @@ nav li a {
 }
 
 #youtube {
-    /* width: min(calc(100vw - 60px), 800px);
-    height: min(56vw - 33px, 450px);
-    margin: 20px 20px 0px 20px;
-    border-radius: 10px; */
     width: 100%;
     height: 56vw;
-    margin: 0
+    margin-bottom: 20px;
 }
 
 @media screen and (min-width: 500px) {
     #youtube {
-        display: none;
+        width: min(800px, 100vw);
+        height: min(450px, 56vw);
+        margin-bottom: 50px;
     }
 }
 
