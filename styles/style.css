@@ -418,6 +418,9 @@ footer p {
     .btn {
         margin: 10px 5px;
     }
+    .btn-full {
+        width: calc(100% - 50px);
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -456,6 +459,7 @@ footer p {
 
 .btn-primary {
     background-color: var(--burgundy);
+    border: 1px solid var(--burgundy);
     color: white;
 }
 
@@ -520,6 +524,11 @@ footer p {
     .pc-col-4 {
         display: inline-block;
         width: 33%;
+    }
+    .pc-col-6 {
+        display: inline-block;
+        width: 50%;
+        vertical-align: top;
     }
     .pc-col-8 {
         display: inline-block;

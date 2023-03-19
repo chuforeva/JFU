@@ -52,7 +52,12 @@
     }
     
     .btn {
-        display: block !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .btn:last-child {
+        margin-bottom: 10px;
     }
 </style>
 
@@ -140,24 +145,21 @@
                         var btns = document.getElementsByClassName("content")
                         for (btn of btns) {
                             if (btn.getAttribute("data-id") == i) {
+                                var div1 = document.createElement("div");
+                                div1.classList.add("pc-col-6");
+                                var div2 = document.createElement("div");
+                                div2.classList.add("pc-col-6");
                                 for (l of todo[i]) {
                                     var a = document.createElement("a");
-                                    a.classList.add("btn");
-                                    if (l.date != null) {
-                                        a.classList.add("btn-primary");
-                                    } else {
-                                        a.classList.add("btn-secondary");
-                                    }
-                                    a.setAttribute("href", l.link);
 
                                     if (l.site == null) {
                                         a.innerText = l.title;
                                     } else {
                                         if (l.date) {
                                             if (l.date.start.day == i) {
-                                                a.innerText = l.title + " (" + l.site + " / " + l.date.start.time + " 이후)";
+                                                a.innerText = l.title + "\n(" + l.site + " / " + l.date.start.time + " 이후)";
                                             } else if (l.date.start.end == i) {
-                                                a.innerText = l.title + " (" + l.site + " / " + l.date.start.time + " 마감)";
+                                                a.innerText = l.title + "\n(" + l.site + " / " + l.date.start.time + " 마감)";
                                             } else {
                                                 a.innerText = l.title + " (" + l.site + ")";
                                             }
@@ -165,8 +167,20 @@
                                             a.innerText = l.title + " (" + l.site + ")";
                                         }
                                     }
-                                    btn.appendChild(a);
+
+                                    a.setAttribute("href", l.link);
+                                    a.classList.add("btn");
+                                    a.classList.add("btn-full");
+                                    if (l.date != null) {
+                                        a.classList.add("btn-primary");
+                                        div1.appendChild(a);
+                                    } else {
+                                        a.classList.add("btn-secondary");
+                                        div2.appendChild(a);
+                                    }
                                 }
+                                btn.appendChild(div1);
+                                btn.appendChild(div2);
                             }
                         }
                     }
