@@ -553,10 +553,21 @@ footer p {
     .pc-padding-20 {
         padding: 20px 0;
     }
+    .guide-top .btn {
+        width: calc(90vw - 100px);
+        margin-bottom: 0;
+        text-align: center;
+    }
 }
 
 .guide-text {
     margin: 20px 0;
+}
+
+.guide-text span {
+    background-color: rgba(var(--burgundyRGB), 0.2);
+    border-radius: 5px;
+    padding: 0 5px;
 }
 
 .guide-text ul {
@@ -569,4 +580,14 @@ footer p {
     width: 100%;
     box-shadow: 0 0 10px black;
     border-radius: 20px;
+}
+
+.guide-top {
+    border: 2px dotted var(--burgundy);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.guide-top {
+    line-height: 1.8em;
 }
