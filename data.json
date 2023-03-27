@@ -15,7 +15,7 @@
             "title": "STREAMING",
             "link": [{
                     "title": "음원 스트리밍 가이드",
-                    "link": "javascript:comingsoon()"
+                    "link": "/guides/music-streaming-guide.html"
                 },
                 {
                     "title": "음원 다운로드 가이드",
