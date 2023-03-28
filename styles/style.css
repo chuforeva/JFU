@@ -309,13 +309,19 @@ nav li a {
 @media screen and (min-width: 1200px) {
     main {
         max-width: 1200px;
-        margin: 5px calc(50% - 600px);
+        margin: 20px calc(50% - 600px);
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media (min-width: 500px) and (max-width: 1200px) {
     main {
         margin: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        margin: -1px 20px 20px 20px;
     }
 }
 
