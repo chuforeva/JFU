@@ -32,20 +32,39 @@
     <main class="center">
         <div class="box">
             <img class="guide-image" src="/images/broadcast_vote.png">
+            <div class="guide-text">
+                <a class="btn btn-primary" href="#sbs">인기가요 (SBS)</a>
+                <a class="btn btn-primary" href="#mbc">쇼! 음악중심 (MBC)</a>
+                <a class="btn btn-primary" href="#kbs">뮤직뱅크 (KBS)</a>
+                <a class="btn btn-primary" href="#mnet">엠카운트다운 (Mnet)</a>
+            </div>
         </div>
 
-        <div class="box">
+        <div class="box" id="sbs">
             <h1>인기가요 (SBS)</h1>
             <a class="btn btn-secondary" href="https://m2.melon.com/popularsong/view.htm" target="_blank">사전투표 (멜론 앱 / 인 당 1일 1회)<span>월요일 12:00 PM ~ 토요일 11:59 PM</span></a>
             <a class="btn btn-secondary" href="https://checkstore.dalcomsoft.net/?app=ssx" target="_blank">실시간 앱투표 (슈퍼스타X 앱 / 인 당 5회)<span>일요일 3:40 PM 이후 (생방송 중)</span></a>
             <a class="btn btn-secondary" href="https://checkstore.dalcomsoft.net/?app=ssx" target="_blank">핫 스테이지 투표 (슈퍼스타X 앱 / 인 당 1일 5회)<span>일요일 방송 직후 ~ 수요일 6:00 PM</span></a>
         </div>
 
-        <div class="box">
+        <div class="box" id="mbc">
             <h1>쇼! 음악중심 (MBC)</h1>
-            <a class="btn btn-secondary" href="">글로벌 사전투표 (뮤빗 앱 / 무제한)<span>화요일 18:00 PM ~ 목요일 11:00 AM</span></a>
-            <a class="btn btn-secondary" href="javascript:sendSMS('0505', '지수')">생방송 문자 투표 (#0505 / 인 당 1회)<span>일요일 3:40 PM 이후 (생방송 중)</span></a>
-            <a class="btn btn-secondary" href="">핫 스테이지 투표 (슈퍼스타X 앱 / 인 당 1일 5회)<span>일요일 방송 직후 ~ 수요일 6:00 PM</span></a>
+            <a class="btn btn-secondary" href="javascript:mubeat()">글로벌 사전투표 (뮤빗 앱 / 무제한)<span>화요일 18:00 PM ~ 목요일 11:00 AM</span></a>
+            <a class="btn btn-secondary" href="https://program.imbc.com/Info/musiccore" target="_blank">시청자 위원회 투표 (음악중심 홈페이지 / 선정된 블링크만)<span>수요일 09:00 AM ~ 목요일 11:00 AM</span></a>
+            <a class="btn btn-secondary" href="javascript:sendSMS('0505', '지수')">생방송 문자 투표 (#0505 / 인 당 1회)<span>토요일 3:30 PM 이후 (생방송 중)</span></a>
+            <a class="btn btn-secondary" href="javascript:sendSMS('0505', '지수')">생방송 앱 투표 (뮤빗 앱 / 계정 당 5회)<span>토요일 3:30 PM 이후 (생방송 중)</span></a>
+
+        </div>
+
+        <div class="box" id="kbs">
+            <h1>뮤직뱅크 (KBS)</h1>
+            <a class="btn btn-secondary" href="javascript:mubeat()">뮤빗 K-POP 팬투표 (뮤빗 앱 / 무제한)<span>월요일 11:00 AM ~ 수요일 11:00 AM</span></a>
+        </div>
+
+        <div class="box" id="mnet">
+            <h1>엠카운트다운 (Mnet)</h1>
+            <a class="btn btn-secondary" href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO" target="_blank">사전투표 (Mnet+ 홈페이지 / 1일 1회)<span>토요일 00:00 AM ~ 월요일 11:59 PM</span></a>
+            <a class="btn btn-secondary" href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO" target="_blank">실시간투표 (Mnet+ 홈페이지 / 인 당 1회)<span>목요일 06:10 PM 이후 (생방송 중)</span></a>
         </div>
 
         <img class="guide-image" src="/images/vote_schedule.jpeg">

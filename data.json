@@ -1,7 +1,7 @@
 {
     "nav": [{
             "title": "TODAY'S TO DO LIST",
-            "link": "javascript:comingsoon()"
+            "link": "/todo.html"
         },
         {
             "title": "ONE CLICK STREAMING LIST",
@@ -102,7 +102,7 @@
         {
             "title": "뮤직뱅크 사전투표",
             "site": "뮤빗 앱",
-            "link": "",
+            "link": "javascript:mubeat()",
             "date": {
                 "start": {
                     "day": 1,
@@ -117,7 +117,7 @@
         {
             "title": "쇼! 음악중심 글로벌 사전투표",
             "site": "뮤빗 앱",
-            "link": "",
+            "link": "javascript:mubeat()",
             "date": {
                 "start": {
                     "day": 2,
@@ -147,7 +147,7 @@
         {
             "title": "쇼! 음악중심 생방송 앱 투표",
             "site": "뮤빗 앱",
-            "link": "",
+            "link": "javascript:mubeat()",
             "date": {
                 "start": {
                     "day": 6,
@@ -159,7 +159,7 @@
         {
             "title": "쇼! 음악중심 생방송 문자 투표",
             "site": "#0505",
-            "link": "",
+            "link": "javascript:sendSMS('0505', '지수')",
             "date": {
                 "start": {
                     "day": 6,
@@ -213,7 +213,7 @@
         {
             "title": "인기가요 핫스테이지 투표",
             "site": "SUPERSTAR X 앱",
-            "link": "",
+            "link": "https://checkstore.dalcomsoft.net/?app=ssx",
             "date": {
                 "start": {
                     "day": 0,

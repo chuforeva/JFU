@@ -229,8 +229,6 @@ function melonCharge() {
 }
 
 function sendSMS(code, text) {
-    // IOS      sms:#1035&body=지수의 ‘꽃(FLOWER)’ 신청합니다.
-    // Android  sms:%231035?body=지수의 ‘꽃(FLOWER)’ 신청합니다.
     if (navigator.platform == "iPhone") {
         window.open(`sms:#${code}&body=${text}`);
 
@@ -239,5 +237,17 @@ function sendSMS(code, text) {
 
     } else {
         alert("모바일에서 버튼을 누르면 메세지창으로 이동합니다");
+    }
+}
+
+function mubeat() {
+    if (navigator.platform == "iPhone") {
+        window.open("https://apps.apple.com/us/app/mubeat-for-kpop-lovers/id1320789688", "_blank").focus();
+
+    } else if (navigator.platform == "Linux aarch64") {
+        window.open("https://play.google.com/store/apps/details?id=com.vlending.apps.mubeat", "_blank").focus();
+
+    } else {
+        window.open("https://mubeat.tv/", "_blank").focus();
     }
 }
