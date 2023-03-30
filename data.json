@@ -23,15 +23,19 @@
                 },
                 {
                     "title": "음원 선물하기 가이드",
-                    "link": "javascript:comingsoon()"
+                    "link": "/guides/music-present-guide.html"
                 },
                 {
                     "title": "뮤비 스트리밍 가이드",
-                    "link": "javascript:comingsoon()"
+                    "link": "/guides/mv-streaming-guide.html"
                 },
                 {
                     "title": "음원사이트 스트리밍권",
                     "link": "/guides/streaming-plan.html"
+                },
+                {
+                    "title": "멜론 캐시 충전",
+                    "link": "http://bit.ly/3OkjtJw"
                 }
             ]
         },
