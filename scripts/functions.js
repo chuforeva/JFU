@@ -227,3 +227,17 @@ function melonCharge() {
         window.open("http://m2.melon.com/buy/meloncash/charge.htm", '_blank').focus();
     }
 }
+
+function sendSMS(code, text) {
+    // IOS      sms:#1035&body=지수의 ‘꽃(FLOWER)’ 신청합니다.
+    // Android  sms:%231035?body=지수의 ‘꽃(FLOWER)’ 신청합니다.
+    if (navigator.platform == "iPhone") {
+        window.open(`sms:#${code}&body=${text}`);
+
+    } else if (navigator.platform == "Linux aarch64") {
+        window.open(`sms:%23${code}?body=${text}`);
+
+    } else {
+        alert("모바일에서 버튼을 누르면 메세지창으로 이동합니다");
+    }
+}
