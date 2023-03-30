@@ -57,11 +57,15 @@ function insertNavMobile() {
 
             for (li of json.nav) {
                 if (!Array.isArray(li.link)) {
-                    if (li.link.includes("javascript")) {
+                    if (li.link.includes("javascript:comingsoon()")) {
                         html += `<a href="${li.link}" class="btn-menu btn-disable">${li.title}</a>`;
 
                     } else if (li.link.includes("http")) {
                         html += `<a href="${li.link}" class="btn-menu" target="_blank">${li.title}</a>`;
+
+
+                    } else if (li.link.includes("javascript")) {
+                        html += `<a href="${li.link}" class="btn-menu">${li.title}</a>`;
 
                     } else {
                         html += `<a href="${window.location.origin + li.link}" class="btn-menu">${li.title}</a>`;
@@ -74,11 +78,14 @@ function insertNavMobile() {
                     html += `<h1>${li.title}</h1>`;
 
                     for (sub of li.link) {
-                        if (sub.link.includes("javascript")) {
+                        if (sub.link.includes("javascript:comingsoon()")) {
                             html += `<a href="${sub.link}" class="btn-menu btn-disable">${sub.title}</a>`;
 
                         } else if (sub.link.includes("http")) {
                             html += `<a href="${sub.link}" class="btn-menu" target="_blank">${sub.title}</a>`;
+
+                        } else if (sub.link.includes("javascript")) {
+                            html += `<a href="${sub.link}" class="btn-menu">${sub.title}</a>`;
 
                         } else {
                             html += `<a href="${window.location.origin + sub.link}" class="btn-menu">${sub.title}</a>`;
@@ -111,11 +118,14 @@ function insertNavPC() {
             for (li of json.nav) {
 
                 if (!Array.isArray(li.link)) {
-                    if (li.link.includes("javascript")) {
+                    if (li.link.includes("javascript:comingsoon()")) {
                         html += `<li class="nav-pc btn-disable"><a href="${li.link}">${li.title}</a></li>`;
 
                     } else if (li.link.includes("http")) {
                         html += `<li class="nav-pc"><a href="${li.link}" target="_blank">${li.title}</a></li>`;
+
+                    } else if (li.link.includes("javascript")) {
+                        html += `<li class="nav-pc"><a href="${li.link}">${li.title}</a></li>`;
 
                     } else {
                         html += `<li class="nav-pc"><a href="${window.location.origin + li.link}">${li.title}</a></li>`;
@@ -128,11 +138,14 @@ function insertNavPC() {
                     submenus += `<ul class="nav-pc-sub" data-id="${li.title}" data-show="false">`;
 
                     for (sub of li.link) {
-                        if (sub.link.includes("javascript")) {
+                        if (sub.link.includes("javascript:comingsoon()")) {
                             submenus += `<li class="btn-disable"><a href="${sub.link}">${sub.title}</a></li>`;
 
                         } else if (sub.link.includes("http")) {
                             submenus += `<li><a href="${sub.link}" target="_blank">${sub.title}</a></li>`;
+
+                        } else if (sub.link.includes("javascript")) {
+                            submenus += `<li><a href="${sub.link}">${sub.title}</a></li>`;
 
                         } else {
                             submenus += `<li><a href="${window.location.origin + sub.link}">${sub.title}</a></li>`;
@@ -203,4 +216,14 @@ function hideSubMenu(div, sub) {
     div.lastChild.classList.add("fa-angle-down");
     div.lastChild.classList.remove("fa-angle-up");
     sub.setAttribute("data-show", "false");
+}
+
+function melonCharge() {
+    if (navigator.platform == "iPhone" || navigator.platform == "Linux aarch64") {
+        console.log("mobile");
+        window.open("http://bit.ly/3OkjtJw", '_blank').focus();
+    } else {
+        console.log("pc");
+        window.open("http://m2.melon.com/buy/meloncash/charge.htm", '_blank').focus();
+    }
 }

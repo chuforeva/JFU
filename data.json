@@ -35,7 +35,7 @@
                 },
                 {
                     "title": "멜론 캐시 충전",
-                    "link": "http://bit.ly/3OkjtJw"
+                    "link": "javascript:melonCharge()"
                 }
             ]
         },
