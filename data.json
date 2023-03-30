@@ -47,7 +47,7 @@
                 },
                 {
                     "title": "음악방송 사전/실시간 투표",
-                    "link": "javascript:comingsoon()"
+                    "link": "/broadcast-vote.html"
                 },
                 {
                     "title": "멜론 주간 인기상 투표",
