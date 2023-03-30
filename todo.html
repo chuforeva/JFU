@@ -169,7 +169,9 @@
                                     }
 
                                     a.setAttribute("href", l.link);
-                                    a.setAttribute("target", "_blank");
+                                    if (!l.link.includes("javascript")) {
+                                        a.setAttribute("target", "_blank");
+                                    }
                                     a.classList.add("btn");
                                     a.classList.add("btn-full");
                                     if (l.date != null) {
