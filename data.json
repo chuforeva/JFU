@@ -50,6 +50,10 @@
                     "link": "/broadcast-vote.html"
                 },
                 {
+                    "title": "음악방송별 차트 집계 비율",
+                    "link": "/broadcast-rate.html"
+                },
+                {
                     "title": "멜론 주간 인기상 투표",
                     "link": "https://www.melon.com/melonaward/weekAward.htm"
                 },

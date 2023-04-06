@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JISOO FAN UNION | 음악방송별 차트 집계 비율</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script type="text/javascript" src="../scripts/functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<style>
+    #linkbox .btn {
+        width: auto;
+    }
+    
+    .btn span {
+        display: block;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+
+    <nav class="mobile"></nav>
+    <header></header>
+    <nav class="pc center"></nav>
+
+    <main class="center">
+        <div class="box">
+            <img class="guide-image" src="/images/broadcast_rate.png">
+            <a class="btn btn-primary" href="guides/music-streaming-guide.html">음악방송 사전/실시간 투표</a>
+        </div>
+
+        <div class="box" id="sbs">
+            <h1>인기가요 (SBS) / 쇼! 음악중심 (MBC)</h1>
+            <img class="guide-image" src="/images/broadcast_rate_1.png">
+        </div>
+
+        <div class="box" id="mbc">
+            <h1>뮤직뱅크 (KBS) / 엠카운트다운 (Mnet)</h1>
+            <img class="guide-image" src="/images/broadcast_rate_2.png">
+
+        </div>
+
+        <div class="box" id="kbs">
+            <h1>쇼 챔피언 (MBC M) / 더 쇼 (SBS M)</h1>
+            <img class="guide-image" src="/images/broadcast_rate_3.png">
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        init();
+    </script>
+</body>
