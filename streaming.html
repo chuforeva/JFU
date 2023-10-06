@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html style="color-scheme: dark;">
+
+<head>
+    <title>Streaming</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="https://chartin.me" />
+</head>
+
+<body>
+    <main>
+    </main>
+</body>
+
+<script>
+    var url = "https://chartin.me/api/v3/"
+    var access_token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI0MSIsInJvbGUiOiJST0xFX1VTRVIiLCJpc3MiOiJjaGFydGluLm1lIiwiaWF0IjoxNjk2NTk2NzQ5LCJleHAiOjE2OTY2MTExNDl9.gLy5LGzdvqmdLcX6beGpwjAj3Gs70JG1urCG6PqVHzE"
+    var refresh_token = "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGFydGluLm1lIiwiaWF0IjoxNjk2NTk2NzQ5LCJleHAiOjE2OTcyMDE1NDl9.YZ3VJa-ppSoLd2_bsB49UVi3JfB45WapCZKMw2GFQKY"
+
+    test();
+
+    function test() {
+        let headers = new Headers();
+
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        headers.append('Authorization', 'Bearer ' + access_token);
+        headers.append('Access-Control-Allow-Origin', 'https://chartin.me');
+
+        fetch(url + "chart/melon/top100/20230101/10?page=1&size=100", {
+            mode: 'cors',
+            credentials: 'include',
+            method: 'POST',
+            headers: headers
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+            .catch(error => console.log('Authorization failed: ' + error.message));
+    }
+</script>
+
+
+</html>
