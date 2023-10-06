@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Access-Control-Allow-Origin" content="https://chartin.me" />
 </head>
 
 <body>
@@ -27,7 +26,7 @@
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
         headers.append('Authorization', 'Bearer ' + access_token);
-        headers.append('Access-Control-Allow-Origin', 'https://chartin.me');
+        headers.append('Origin', ['http://localhost:8080/', 'https://www.jisoofanunion.com/']);
 
         fetch(url + "chart/melon/top100/20230101/10?page=1&size=100", {
             mode: 'cors',
