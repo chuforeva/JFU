@@ -26,12 +26,109 @@
     <nav></nav>
 
     <main>
-        
+        <div class="main_left">
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-book"></i> <span>가이드 목록</span>
+                </div>
+                <select name="guides" id="guide_list" onchange="guideChange(this)">
+                    <option value="music_streaming">음원 스트리밍 가이드</option>
+                    <option value="music_download">음원 다운로드 가이드</option>
+                    <option value="music_present">음원 선물하기 가이드</option>
+                    <option value="video_streaming">뮤직비디오 스트리밍 가이드</option>
+                    <option value="radio_request">라디오 신청 가이드</option>
+                </select>
+            </div>
+            <div class="main_box guide_box" data-value="music_streaming">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-headphones"></i> <span>음원 스트리밍 가이드</span>
+                </div>
+            </div>
+            <div class="main_box guide_box" data-value="music_download">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-download"></i> <span>음원 다운로드 가이드</span>
+                </div>
+            </div>
+            <div class="main_box guide_box" data-value="music_present">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-gift"></i> <span>음원 선물하기 가이드</span>
+                </div>
+            </div>
+            <div class="main_box guide_box" data-value="video_streaming">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-play"></i> <span>뮤직비디오 스트리밍 가이드</span>
+                </div>
+            </div>
+            <div class="main_box guide_box" data-value="radio_request">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-radio"></i> <span>라디오 신청 가이드</span>
+                </div>
+            </div>
+        </div>
+        <div class="main_right">
+            
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-link"></i> <span>유용한 링크</span>
+                </div>
+                <div>
+                    <a href="https://www.melon.com/buy/pamphlet/all.htm" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 멜론 이용권 구매</a>
+                    <a href="http://mw.genie.co.kr/product/productMain" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 지니 이용권 구매</a>
+                    <a href="https://pay.bugs.co.kr/pay/mobile/product?enc=bugsMobileWeb&appname=web&ver=pay&tabName=product"
+                        class="btn_list" target="_blank"><i class="fa-solid fa-ticket"></i> 벅스 이용권 구매</a>
+                    <a href="https://m.music-flo.com/purchase/voucher" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 플로 이용권 구매</a>
+                    <a href="https://vibe.naver.com/membership/vibe" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 바이브 이용권 구매</a>
+                    <a href="https://spoti.fi/3ZbBE84" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 스포티파이 이용권 구매</a>
+                    <a href="https://apple.co/2IhsUI3" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 애플뮤직 이용권 구매</a>
+                    <a href="javascript:melonCharge()" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-coins"></i> 멜론 캐시충전</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer></footer>
 
     <script>
         init(window.location);
+        guideOpen();
+
+        function guideOpen() {
+            const params = new URLSearchParams(window.location.search);
+
+            let p = params.get('p');
+            if (p == null) {
+                p = 'music_streaming';
+            }
+
+            for (var node of document.getElementById('guide_list').children) {
+                if (node.getAttribute('value') == p) {
+                    node.setAttribute('selected', 'true');
+                }
+            }
+
+            for (var node of document.getElementsByClassName('guide_box')) {
+                if (node.getAttribute('data-value') == p) {
+                    node.setAttribute('style', 'display: block');
+                }
+            }
+        }
+
+        function guideChange(select) {
+            for (var node of document.getElementsByClassName('guide_box')) {
+                if (node.getAttribute('data-value') == select.value) {
+                    node.setAttribute('style', 'display: block');
+                } else {
+                    node.removeAttribute('style');
+                }
+            }
+        }
+
     </script>
 </body>

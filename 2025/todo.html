@@ -32,34 +32,39 @@
                     <i class="fa-solid fa-calendar-days"></i> <span>요일 선택</span>
                 </div>
                 <div id="todo_day">
-                    <div>
-                        <input type="radio" id="monday" name="day" value="monday" />
-                        <label for="monday">월</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="tuesday" name="day" value="tuesday" />
-                        <label for="tuesday">화</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="wednesday" name="day" value="wednesday" />
-                        <label for="wednesday">수</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="thursday" name="day" value="thursday" />
-                        <label for="thursday">목</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="friday" name="day" value="friday" />
-                        <label for="friday">금</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="saturday" name="day" value="saturday" />
-                        <label for="saturday">토</label>
-                    </div>
-                    <div>
-                        <input type="radio" id="sunday" name="day" value="sunday" />
-                        <label for="sunday">일</label>
-                    </div>
+                    <a href="javascript:todo(0)" data-day=0>일</a>
+                    <a href="javascript:todo(1)" data-day=1>월</a>
+                    <a href="javascript:todo(2)" data-day=2>화</a>
+                    <a href="javascript:todo(3)" data-day=3>수</a>
+                    <a href="javascript:todo(4)" data-day=4>목</a>
+                    <a href="javascript:todo(5)" data-day=5>금</a>
+                    <a href="javascript:todo(6)" data-day=6>토</a>
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-check"></i> <span>오늘의 투두리스트</span>
+                </div>
+                <div class="todo_list" data-day=0>
+                    <h1>일요일 (SUNDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=1>
+                    <h1>월요일 (MONDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=2>
+                    <h1>화요일 (TUESDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=3>
+                    <h1>수요일 (WEDNESDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=4>
+                    <h1>목요일 (THURSDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=5>
+                    <h1>금요일 (FRIDAY)</h1>
+                </div>
+                <div class="todo_list" data-day=6>
+                    <h1>토요일 (SATURDAY)</h1>
                 </div>
             </div>
         </div>
@@ -68,27 +73,40 @@
                 <div class="main_box_header">
                     <i class="fa-solid fa-book"></i> <span>가이드</span>
                 </div>
-                <div style="text-align: center;">
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 음원 스트리밍 가이드</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 음원 다운로드 가이드</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 음원 선물하기 가이드</a>
-                    <a href="/guide/music-download" class="btn"><i class="fa-solid fa-download"></i> 뮤직비디오 스트리밍 가이드</a>
-                    <a href="/guide/music-gift" class="btn"><i class="fa-solid fa-gift"></i> 투표앱 사용 가이드</a>
+                <div>
+                    <a href="guide?p=music_streaming" class="btn_list"><i class="fa-solid fa-headphones"></i> 음원
+                        스트리밍 가이드</a>
+                    <a href="guide?p=music_download" class="btn_list"><i class="fa-solid fa-download"></i> 음원 다운로드
+                        가이드</a>
+                    <a href="guide?p=music_present" class="btn_list"><i class="fa-solid fa-gift"></i> 음원 선물하기
+                        가이드</a>
+                    <a href="guide?p=video_streaming" class="btn_list"><i class="fa-solid fa-play"></i> 뮤직비디오 스트리밍
+                        가이드</a>
+                    <a href="vote?p=guide" class="btn_list"><i class="fa-solid fa-check-to-slot"></i> 투표앱 사용
+                        가이드</a>
                 </div>
             </div>
             <div class="main_box">
                 <div class="main_box_header">
-                    <i class="fa-solid fa-book"></i> <span>스마트 링크</span>
+                    <i class="fa-solid fa-link"></i> <span>유용한 링크</span>
                 </div>
-                <div style="text-align: center;">
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 멜론 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 지니 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 벅스 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 플로 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 바이브 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 스포티파이 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 애플뮤직 이용권 구매</a>
-                    <a href="/guide/music-streaming" class="btn"><i class="fa-solid fa-headphones"></i> 멜론 캐시충전</a>
+                <div>
+                    <a href="https://www.melon.com/buy/pamphlet/all.htm" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 멜론 이용권 구매</a>
+                    <a href="http://mw.genie.co.kr/product/productMain" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 지니 이용권 구매</a>
+                    <a href="https://pay.bugs.co.kr/pay/mobile/product?enc=bugsMobileWeb&appname=web&ver=pay&tabName=product"
+                        class="btn_list" target="_blank"><i class="fa-solid fa-ticket"></i> 벅스 이용권 구매</a>
+                    <a href="https://m.music-flo.com/purchase/voucher" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 플로 이용권 구매</a>
+                    <a href="https://vibe.naver.com/membership/vibe" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 바이브 이용권 구매</a>
+                    <a href="https://spoti.fi/3ZbBE84" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 스포티파이 이용권 구매</a>
+                    <a href="https://apple.co/2IhsUI3" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-ticket"></i> 애플뮤직 이용권 구매</a>
+                    <a href="javascript:melonCharge()" class="btn_list" target="_blank"><i
+                            class="fa-solid fa-coins"></i> 멜론 캐시충전</a>
                 </div>
             </div>
         </div>
@@ -98,5 +116,40 @@
 
     <script>
         init(window.location);
+        setDay();
+
+        function setDay() {
+            const date = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+
+            for (var node of document.getElementById('todo_day').children) {
+                if (parseInt(node.getAttribute('data-day')) == date.getDay()) {
+                    node.classList.add('selected');
+                }
+            }
+
+            for (var node of document.getElementsByClassName('todo_list')) {
+                if (parseInt(node.getAttribute('data-day')) == date.getDay()) {
+                    node.setAttribute('style', 'display: block')
+                }
+            }
+        }
+
+        function todo(day) {
+            for (var node of document.getElementById('todo_day').children) {
+                if (parseInt(node.getAttribute('data-day')) == day) {
+                    node.classList.add('selected');
+                } else {
+                    node.classList.remove('selected');
+                }
+            }
+
+            for (var node of document.getElementsByClassName('todo_list')) {
+                if (parseInt(node.getAttribute('data-day')) == day) {
+                    node.setAttribute('style', 'display: block')
+                } else {
+                    node.removeAttribute('style');
+                }
+            }
+        }
     </script>
 </body>

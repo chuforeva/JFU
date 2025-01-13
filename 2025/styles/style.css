@@ -1,8 +1,7 @@
 :root {
-    --eggretwhite: #F3ECE0;
-    --burgundy: #7b1823;
-    --burgundyRGB: 123, 24, 35;
-    --burgundy-active: #521018;
+    --theme-0: #F3ECE0;
+    --theme-1: #000000;
+    --theme-2: rgb(240, 240, 240);
     --content-width: 1400px;
 }
 
@@ -12,7 +11,7 @@
 }
 
 body {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--theme-2);
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -34,7 +33,7 @@ html {
 /* NAV */
 nav {
     /* max-width: var(--content-width); */
-    width: 100%;
+    max-width: 100%;
     padding: 0 calc(50% - var(--content-width) / 2);
     /* margin-left: auto;
     margin-right: auto; */
@@ -49,6 +48,7 @@ nav {
 #nav_logo_2 {
     height: 4.25rem;
     object-fit: cover;
+    filter: grayscale(100%);
 }
 
 nav a {
@@ -61,20 +61,20 @@ nav a {
 }
 
 nav a.selected {
-    background-color: var(--burgundy);
+    background-color: var(--theme-1);
     color: white;
 }
 
 @media (min-width: 1200px) {
     #nav_logo_1 {
         width: 100px;
-        object-position: 0% 50%;
+        object-position: 0% 40%;
         margin-left: 0px;
     }
 
     #nav_logo_2 {
         width: 300px;
-        object-position: 0% 50%;
+        object-position: 0% 48%;
         margin-left: -70px;
     }
 
@@ -90,13 +90,13 @@ nav a.selected {
 @media screen and (max-width: 1200px) {
     #nav_logo_1 {
         width: 100px;
-        object-position: 0% 50%;
+        object-position: 0% 40%;
         margin-left: -40px;
     }
 
     #nav_logo_2 {
         width: 300px;
-        object-position: 0% 50%;
+        object-position: 0% 48%;
         margin-left: -70px;
     }
 
@@ -122,12 +122,12 @@ nav a.selected {
     display: block;
     width: 25%;
     text-align: center;
-    color: rgb(100, 100, 100);
+    color: rgb(150, 150, 150);
     text-decoration: none;
 }
 
 #mobile_nav a.selected {
-    color: var(--burgundy);
+    color: var(--theme-1);
 }
 
 #mobile_nav a i {
@@ -150,6 +150,15 @@ nav a.selected {
     overflow: hidden;
     user-select: none;
     position: relative;
+}
+
+#header_banner {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    user-select: none;
+    display: block;
 }
 
 @media (min-width: 1200px) {
@@ -181,7 +190,7 @@ nav a.selected {
     font-weight: bold;
     padding: 30px;
     margin-bottom: 30px;
-    background-color: var(--burgundy);
+    background-color: var(--theme-1);
     color: white;
 }
 
@@ -237,12 +246,10 @@ main .main_box {
     }
 }
 
-
-
 main .main_box_header {
     margin: 10px 0 20px 0;
     line-height: 30px;
-    color: var(--burgundy);
+    color: var(--theme-1);
     align-items: center;
     display: flex;
 }
@@ -265,14 +272,38 @@ main .main_box img {
 main a.btn {
     display: inline-block;
     text-decoration: none;
-    background-color: var(--burgundy);
+    background-color: var(--theme-1);
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
     margin: 5px;
 }
 
-main a.btn i {
+main a.btn2 {
+    display: inline-block;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+main a.btn_list {
+    display: block;
+    text-decoration: none;
+    background-color: var(--theme-2);
+    color: black;
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+main a.btn i,
+main a.btn2 i,
+main a.btn_list i {
     margin-right: 5px;
 }
 
@@ -301,9 +332,14 @@ main .main_box h1 span {
 
 main .main_box h2 {
     font-size: 1rem;
+    margin: 10px 10px;
+}
+
+main .main_box h3 {
+    font-size: 1rem;
     font-weight: initial;
     margin: 10px 10px;
-    color: rgb(150, 150, 150);
+    color: rgb(100, 100, 100);
 }
 
 /* FOOTER */
@@ -315,9 +351,11 @@ footer {
 }
 
 footer img {
-    height: 150px;
-    width: 700px;
+    height: 100px;
+    width: 400px;
     object-fit: cover;
+    object-position: 0 48%;
+    filter: grayscale(100%);
 }
 
 @media (min-width: 1200px) {
@@ -331,6 +369,55 @@ footer img {
         display: none;
     }
 }
+
+footer span {
+    display: block;
+    font-size: 0.8rem;
+    padding-bottom: 2rem;
+}
+
+/* POPUP */
+#popup {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+#popup_header {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 10%;
+}
+
+#popup_header span {
+    float: right;
+    cursor: pointer;
+}
+
+#popup_content {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#popup_content img {
+    width: 100%;
+}
+
 
 /* MELON STREAMING CARD */
 #streaming_card {
@@ -395,7 +482,7 @@ footer img {
 
 .chart_song {
     height: 3rem;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--theme-2);
     border-radius: 10px;
     padding: 10px;
     margin: 5px 0;
@@ -495,7 +582,7 @@ footer img {
 .link_box {
     display: inline-block;
     width: calc(50% - 32.5px);
-    background-color: rgb(240, 240, 240);
+    background-color: var(--theme-2);
     padding: 10px;
     margin: 5px;
     text-decoration: none;
@@ -515,14 +602,14 @@ footer img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--theme-2);
     border-radius: 10px;
     padding: 10px 50px;
 }
 
 .oneclick_box {
     height: 3rem;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--theme-2);
     border-radius: 10px;
     padding: 10px;
     margin: 5px 0;
@@ -538,12 +625,114 @@ footer img {
     font-weight: bold;
 }
 
+/* TODO */
 #todo_day {
     display: flex;
     width: 100%;
 }
 
-#todo_day div {
-    width: calc(100% / 7);
+#todo_day a {
+    display: inline-block;
+    background-color: var(--theme-2);
+    height: 3rem;
+    width: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
     text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 calc((100% - 21rem) / 14);
+}
+
+#todo_day a.selected {
+    background-color: var(--theme-1);
+    color: white;
+}
+
+.todo_list {
+    display: none;
+}
+
+/* GUIDE */
+#guide_list {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    background-color: var(--theme-2);
+    border-radius: 5px;
+    outline: none;
+}
+
+#guide_list option {
+    padding: 10px;
+}
+
+.guide_box {
+    display: none;
+}
+
+/* VOTE */
+.vote_box {
+    display: none;
+}
+
+.vote_row {
+    background-color: var(--theme-2);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: block;
+    align-items: center;
+}
+
+.vote_row h2 {
+    margin-top: 0 !important;
+}
+
+@media (min-width: 1200px) {
+    .vote_row_content {
+        display: flex;
+    }
+    
+    .vote_row_content img {
+        width: 7rem !important;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    
+    .vote_row_detail {
+        margin-left: 15px;
+    }
+    
+    .vote_row_detail p {
+        margin-left: 5px;
+    }
+    
+    .vote_row_detail div {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .vote_row_content {
+        width: 100%;
+    }
+
+    .vote_row_content img {
+        width: 8rem !important;
+        margin-left: calc(50% - 4rem);
+        border-radius: 5px;
+        display: inline-block;
+    }
+    
+    .vote_row_detail {
+        margin: 10px 5px 0 5px;
+    }
+
+    .vote_row_detail div {
+        text-align: center;
+        margin-top: 10px;
+    }
 }
