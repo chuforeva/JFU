@@ -1,0 +1,344 @@
+:root {
+    --eggretwhite: #F3ECE0;
+    --burgundy: #7b1823;
+    --burgundyRGB: 123, 24, 35;
+    --burgundy-active: #521018;
+    --content-width: 1400px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+    min-height: 100%;
+}
+
+nav {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+    height: 4.25rem;
+    align-items: center;
+    display: flex;
+}
+
+#nav_logo_1,
+#nav_logo_2 {
+    height: 4.25rem;
+    object-fit: cover;
+}
+
+#nav_logo_1 {
+    width: 100px;
+    object-position: 0% 50%;
+    margin-left: 0px;
+}
+
+#nav_logo_2 {
+    width: 300px;
+    object-position: 0% 50%;
+    margin-left: -70px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 25px;
+    color: black;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a.selected {
+    background-color: var(--burgundy);
+    color: white;
+}
+
+#header_youtube {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    user-select: none;
+    position: relative;
+}
+
+#header_youtube iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    object-position: 0 50%;
+    pointer-events: none;
+    position: absolute;
+    top: -25%;
+}
+
+#header_slogan {
+    width: calc(100% - 60px);
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bold;
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: var(--burgundy);
+    color: white;
+}
+
+main {
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+
+main .main_left {
+    width: calc(30% - 20px);
+    display: inline-block;
+    padding: 10px;
+}
+
+main .main_right {
+    width: calc(70% - 20px);
+    display: inline-block;
+    padding: 10px;
+}
+
+main .main_box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgb(200, 200, 200) 0 0 5px;
+    margin-bottom: 20px;
+}
+
+main .main_box_header {
+    margin: 10px 0 20px 0;
+    line-height: 30px;
+    color: var(--burgundy);
+    align-items: center;
+    display: flex;
+}
+
+main .main_box_header i {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+main .main_box_header span {
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+main a.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--burgundy);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+main a.btn i {
+    margin-right: 5px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    height: 150px;
+    margin-top: 50px;
+}
+
+footer img {
+    height: 150px;
+    width: 700px;
+    object-fit: cover;
+}
+
+/* MELON STREAMING CARD */
+#streaming_card {
+    padding: 0 10px 10px 10px;
+}
+
+#streaming_card_song {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#streaming_card_artist {
+    color: rgb(100, 100, 100);
+}
+
+#streaming_card_detail {
+    display: flex;
+    padding-top: 20px;
+}
+
+#streaming_card_album_cover {
+    width: 60%;
+}
+
+#streaming_card_album_cover img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#streaming_card_number {
+    margin-left: 15px;
+}
+
+#streaming_card_total_header,
+#streaming_card_listener_header {
+    color: rgb(100, 100, 100);
+    font-size: 0.8rem;
+}
+
+#streaming_card_total,
+#streaming_card_listener {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* MUSIC CHARTS */
+.chart_box {
+    margin-bottom: 20px;
+}
+
+.chart_header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chart_time {
+    font-weight: initial;
+    color: rgb(100, 100, 100);
+    float: right;
+}
+
+.chart_song {
+    height: 3rem;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.chart_song_rank,
+.chart_song_rank_diff,
+.chart_album_cover,
+.chart_song_detail {
+    display: inline-block;
+}
+
+.chart_song_rank {
+    line-height: 3rem;
+    font-size: 1.2rem;
+    width: 2rem;
+}
+
+.chart_song_rank {
+    line-height: 3rem;
+    font-size: 1.2rem;
+    width: 1.5rem;
+    text-align: center;
+}
+
+.chart_song_rank_diff {
+    line-height: 3rem;
+    width: 3rem;
+    text-align: center;
+    color: rgb(100, 100, 100);
+}
+
+.chart_song_rank_diff.up {
+    color: rgb(221 43 0);
+}
+
+.chart_song_rank_diff.down {
+    color: rgb(13, 60, 189);
+}
+
+.chart_album_cover {
+    width: 3.5rem;
+    text-align: center;
+}
+
+.chart_album_cover img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.chart_song_detail {
+    padding-left: 1rem;
+}
+
+.chart_song_title,
+.chart_song_artists {
+    height: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.chart_song_artists {
+    color: rgb(100, 100, 100);
+    font-size: 0.8rem;
+}
+
+/* YOUTUBE RECORD */
+#youtube_embed {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+}
+
+#youtube_view,
+#youtube_like,
+#youtube_comment {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.8rem;
+    margin-left: -0.3rem;
+}
+
+#youtube_view span,
+#youtube_like span,
+#youtube_comment span {
+    width: 100%;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* LINK BOX */
+.link_box {
+    display: inline-block;
+    width: calc(50% - 32.5px);
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.link_box i {
+    margin: 0 0.3rem;
+}
+
+/* TWITTER */
+#twitter-widget-0 {
+    /* border-radius: 10px;
+    box-shadow: rgb(200, 200, 200) 0 0 5px; */
+}
