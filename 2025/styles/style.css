@@ -145,17 +145,6 @@ nav a.selected {
     position: relative;
 }
 
-#header_youtube iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: fill;
-    object-position: 0 50%;
-    pointer-events: none;
-    position: absolute;
-    top: -25%;
-}
-
 @media (min-width: 1200px) {
     #header_youtube {
         height: 500px;
@@ -165,6 +154,22 @@ nav a.selected {
 @media screen and (max-width: 1200px) {
     #header_youtube {
         height: 40vw;
+    }
+}
+
+#header_youtube iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    object-position: 0 50%;
+    position: absolute;
+    top: -25%;
+}
+
+@supports not (-webkit-touch-callout: none) {
+    #header_youtube iframe {
+        pointer-events: none;
     }
 }
 
@@ -516,10 +521,12 @@ footer img {
     margin: 5px 0;
     display: flex;
     align-items: center;
+    font-size: 1rem;
 }
 
 .oneclick_box span {
-    width: 6rem;
+    font-size: 1.5rem;
+    width: 3rem;
     margin-left: 1rem;
     font-weight: bold;
 }
