@@ -15,13 +15,3 @@ function convertToKorUnit(num) {
 
     return remain.toFixed(1) + units[unitIndex];
 }
-
-function melonCharge() {
-    if (navigator.platform == "iPhone" || navigator.platform == "Linux aarch64") {
-        console.log("mobile");
-        window.open("http://bit.ly/3OkjtJw", '_blank').focus();
-    } else {
-        console.log("pc");
-        window.open("http://m2.melon.com/buy/meloncash/charge.htm", '_blank').focus();
-    }
-}
