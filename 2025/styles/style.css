@@ -167,12 +167,6 @@ nav a.selected {
     top: -25%;
 }
 
-@supports not (-webkit-touch-callout: none) {
-    #header_youtube iframe {
-        pointer-events: none;
-    }
-}
-
 #header_slogan {
     width: calc(100% - 60px);
     text-align: center;
