@@ -4,7 +4,7 @@
     <title>JISOO FAN UNION</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -38,6 +38,44 @@
 
     <main>
         <div class="main_left">
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-star"></i> <span>즐겨찾기</span>
+                </div>
+                <div style="text-align: center;">
+                    <a href="/" class="btn"><i class="fa-solid fa-hand-pointer"></i> 원클릭 스밍리스트</a>
+                    <a href="/" class="btn"><i class="fa-solid fa-headphones"></i> 음원 스트리밍 가이드</a>
+                    <a href="/" class="btn"><i class="fa-solid fa-check-to-slot"></i> 음악방송 투표</a>
+                    <a href="javascript:melonCharge()" class="btn"><i class="fa-solid fa-coins"></i> 멜론 캐시 충전</a>
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-chart-simple"></i> <span>음원차트 차트인 현황</span>
+                </div>
+                <div id="melon_top100" class="chart_box">
+                    <div id="melon_header" class="chart_header">멜론 TOP 100 <i class="fa-solid fa-chevron-right"></i>
+                        <div id="melon_time" class="chart_time"></div>
+                    </div>
+                </div>
+                <div id="genie_realtime">
+                    <div id="genie_header" class="chart_header">지니 실시간 <i class="fa-solid fa-chevron-right"></i>
+                        <div id="genie_time" class="chart_time"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-brands fa-x-twitter"></i> <span>지수팬연합 소식</span>
+                </div>
+                <a class="twitter-timeline" data-lang="ko" data-width="100%" data-height="500" data-dnt="true"
+                    data-theme="light" data-chrome="noheader noborders"
+                    href="https://twitter.com/Jisoo_Fan_Union?ref_src=twsrc%5Etfw"></a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+
+        <div class="main_right">
             <div class="main_box">
                 <div class="main_box_header">
                     <i class="fa-brands fa-youtube"></i> <span>유튜브 실시간 수치</span>
@@ -84,47 +122,10 @@
                 </a>
             </div>
         </div>
-        <div class="main_right">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-star"></i> <span>즐겨찾기</span>
-                </div>
-                <div style="text-align: center;">
-                    <a href="/" class="btn"><i class="fa-solid fa-hand-pointer"></i> 원클릭 스밍리스트</a>
-                    <a href="/" class="btn"><i class="fa-solid fa-headphones"></i> 음원 스트리밍 가이드</a>
-                    <a href="/" class="btn"><i class="fa-solid fa-headphones"></i> 음악방송 투표</a>
-                    <a href="/" class="btn"><i class="fa-solid fa-coins"></i> 멜론 캐시 충전</a>
-                </div>
-            </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-chart-simple"></i> <span>음원차트 차트인 현황</span>
-                </div>
-                <div id="melon_top100" class="chart_box">
-                    <div id="melon_header" class="chart_header">멜론 TOP 100 <i class="fa-solid fa-chevron-right"></i>
-                        <div id="melon_time" class="chart_time"></div>
-                    </div>
-                </div>
-                <div id="genie_realtime">
-                    <div id="genie_header" class="chart_header">지니 실시간 <i class="fa-solid fa-chevron-right"></i>
-                        <div id="genie_time" class="chart_time"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-brands fa-x-twitter"></i> <span>지수팬연합 소식</span>
-                </div>
-                <a class="twitter-timeline" data-lang="ko" data-width="100%" data-height="500" data-dnt="true"
-                    data-theme="light" data-chrome="noheader noborders"
-                    href="https://twitter.com/Jisoo_Fan_Union?ref_src=twsrc%5Etfw"></a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-
-        </div>
     </main>
 
     <footer></footer>
+
 
     <script>
         init(window.location);
