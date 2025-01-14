@@ -153,7 +153,6 @@ nav a.selected {
 }
 
 #header_banner {
-    height: 400px;
     width: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -165,11 +164,19 @@ nav a.selected {
     #header_youtube {
         height: 500px;
     }
+
+    #header_banner {
+        height: 400px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     #header_youtube {
         height: 40vw;
+    }
+
+    #header_banner {
+        height: 150px;
     }
 }
 
