@@ -92,12 +92,7 @@ function popup() {
     popup.appendChild(popup_header);
     var popup_content = document.createElement('div');
     popup_content.id = "popup_content";
-    popup_content.innerHTML += `<iframe src="https://www.youtube.com/embed/7JF8GpBjXH4" title="JISOO COMING SOON" id="youtube_embed" frameborder="0" allowfullscreen style="width: 100%;"></iframe>
-        카카오뱅크 ㅂㄷㄱ<br>
-        <span style="font-size: 2rem;">3333 17 3766359</span><br><br>
-        DC 지수 갤러리에서 다가오는 지수의 두 번째 솔로 활동 서포트를 위한 모금을 진행합니다!<br>많은 후원 부탁드립니다.<br>
-        모금 받은 금액은 추후 지수팬연합 계좌로 전액 이체되며, 오로지 지수의 솔로 활동 서포트에 사용됩니다.<br>
-        정산은 서포트가 최종적으로 마무리 된 후 입금자에 한해 공개 예정입니다.`;
+    popup_content.innerHTML += `<img src="images/fundraiser.jpg">`;
     popup.appendChild(popup_content);
     document.getElementsByTagName('footer')[0].after(popup);
 }

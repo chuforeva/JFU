@@ -332,13 +332,18 @@ main .main_box h1 span {
 
 main .main_box h2 {
     font-size: 1rem;
-    margin: 10px 10px;
+    margin: 10px;
+}
+
+main .main_box p {
+    font-size: 1rem;
+    margin: 5px 10px;
 }
 
 main .main_box h3 {
     font-size: 1rem;
     font-weight: initial;
-    margin: 10px 10px;
+    margin: 10px;
     color: rgb(100, 100, 100);
 }
 
@@ -653,6 +658,18 @@ footer span {
     display: none;
 }
 
+.todo_row {
+    background-color: var(--theme-2);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.todo_row h2,
+.todo_row h3 {
+    margin: 5px 10px !important;
+}
+
 /* GUIDE */
 #guide_list {
     width: 100%;
@@ -691,25 +708,30 @@ footer span {
     margin-top: 0 !important;
 }
 
+.vote_row p:first-child {
+    margin-top: 0 !important;
+}
+
 @media (min-width: 1200px) {
     .vote_row_content {
         display: flex;
     }
-    
+
     .vote_row_content img {
         width: 7rem !important;
+        height: 7em !important;
         border-radius: 5px;
         display: inline-block;
     }
-    
+
     .vote_row_detail {
         margin-left: 15px;
     }
-    
+
     .vote_row_detail p {
         margin-left: 5px;
     }
-    
+
     .vote_row_detail div {
         margin-top: 10px;
     }
@@ -726,7 +748,7 @@ footer span {
         border-radius: 5px;
         display: inline-block;
     }
-    
+
     .vote_row_detail {
         margin: 10px 5px 0 5px;
     }

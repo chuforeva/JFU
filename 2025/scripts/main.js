@@ -15,3 +15,15 @@ function convertToKorUnit(num) {
 
     return remain.toFixed(1) + units[unitIndex];
 }
+
+function sendSMS(code, text) {
+    if (navigator.platform == "iPhone") {
+        window.open(`sms:#${code}&body=${text}`);
+
+    } else if (navigator.platform == "Linux aarch64") {
+        window.open(`sms:%23${code}?body=${text}`);
+
+    } else {
+        alert("모바일에서 버튼을 누르면 메세지창으로 이동합니다");
+    }
+}
