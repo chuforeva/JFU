@@ -1,6 +1,6 @@
 :root {
     --theme-0: #F3ECE0;
-    --theme-1: #000000;
+    --theme-1: #323232;
     --theme-2: rgb(240, 240, 240);
     --content-width: 1400px;
 }
@@ -270,6 +270,8 @@ main .main_box_header span {
     font-weight: bold;
     display: inline-block;
     margin-left: 30px;
+    font-size: 1.1rem;
+    line-height: 30px;
 }
 
 main .main_box img {
