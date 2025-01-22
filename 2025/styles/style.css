@@ -1,7 +1,8 @@
 :root {
-    --theme-0: #F3ECE0;
-    --theme-1: #323232;
-    --theme-2: rgb(240, 240, 240);
+    --theme-0: #B9B5D6;
+    --theme-1: #231816;
+    --theme-2: #ffffff;
+    --theme-3: #f3f2f8;
     --content-width: 1400px;
 }
 
@@ -11,7 +12,8 @@
 }
 
 body {
-    background-color: var(--theme-2);
+    background: linear-gradient(135deg, var(--theme-2), var(--theme-0));
+    padding-bottom: 1rem;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -41,7 +43,7 @@ nav {
     height: 4.25rem;
     align-items: center;
     display: flex;
-    background-color: white;
+    /* background-color: white; */
 }
 
 #nav_logo_1,
@@ -61,7 +63,7 @@ nav a {
 }
 
 nav a.selected {
-    background-color: var(--theme-1);
+    background-color: var(--theme-0);
     color: white;
 }
 
@@ -122,12 +124,12 @@ nav a.selected {
     display: block;
     width: 25%;
     text-align: center;
-    color: rgb(150, 150, 150);
+    color: rgb(200, 200, 200);
     text-decoration: none;
 }
 
 #mobile_nav a.selected {
-    color: var(--theme-1);
+    color: var(--theme-0);
 }
 
 #mobile_nav a i {
@@ -190,23 +192,11 @@ nav a.selected {
     top: -25%;
 }
 
-#header_slogan {
-    width: calc(100% - 60px);
-    text-align: center;
-    font-family: 'Gowun Batang', serif;
-    font-weight: bold;
-    padding: 30px;
-    margin-bottom: 30px;
-    background-color: var(--theme-1);
-    color: white;
-}
-
 /* MAIN */
 main {
     max-width: var(--content-width);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
 }
 
 main .main_left,
@@ -215,15 +205,16 @@ main .main_right {
 }
 
 main .main_box {
-    background-color: white;
+    background-color: var(--theme-2);
     padding: 10px;
-    box-shadow: rgb(200, 200, 200) 0 0 5px;
+    box-shadow: var(--theme-0) 0 0 5px;
     margin-bottom: 20px;
 }
 
 @media (min-width: 1200px) {
     main {
         display: flex;
+        margin-top: 2rem;
     }
 
     main .main_left {
@@ -244,7 +235,8 @@ main .main_box {
 @media screen and (max-width: 1200px) {
     main {
         display: block;
-        margin-bottom: 5rem;
+        margin-top: 1.3rem;
+        margin-bottom: 3rem;
     }
 
     main .main_left,
@@ -281,7 +273,7 @@ main .main_box img {
 main a.btn {
     display: inline-block;
     text-decoration: none;
-    background-color: var(--theme-1);
+    background-color: var(--theme-0);
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
@@ -292,17 +284,17 @@ main a.btn2 {
     display: inline-block;
     text-decoration: none;
     background-color: white;
-    color: black;
+    color: var(--theme-0);
     padding: 10px 15px;
     border-radius: 20px;
-    border: 1px solid black;
+    border: 1px solid var(--theme-0);
     margin: 5px;
 }
 
 main a.btn_list {
     display: block;
     text-decoration: none;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     color: black;
     width: calc(100% - 20px);
     padding: 10px;
@@ -360,7 +352,7 @@ main .main_box h3 {
 footer {
     width: 100%;
     text-align: center;
-    height: 150px;
+    height: 220px;
     margin-top: 50px;
 }
 
@@ -370,6 +362,18 @@ footer img {
     object-fit: cover;
     object-position: 0 48%;
     filter: grayscale(100%);
+}
+
+#slogan {
+    width: 100%;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-weight: bold;
+    padding: 10px 0 20px 0;
+    /* margin-bottom: 30px; */
+    /* background-color: var(--theme-1); */
+    /* color: white; */
+    font-size: 1.1rem;
 }
 
 @media (min-width: 1200px) {
@@ -387,7 +391,6 @@ footer img {
 footer span {
     display: block;
     font-size: 0.8rem;
-    padding-bottom: 2rem;
 }
 
 /* POPUP */
@@ -501,7 +504,7 @@ footer span {
 
 .chart_song {
     height: 3rem;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     border-radius: 10px;
     padding: 10px;
     margin: 5px 0;
@@ -601,7 +604,7 @@ footer span {
 .link_box {
     display: inline-block;
     width: calc(50% - 32.5px);
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     padding: 10px;
     margin: 5px;
     text-decoration: none;
@@ -621,14 +624,14 @@ footer span {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     border-radius: 10px;
     padding: 10px 50px;
 }
 
 .oneclick_box {
     height: 3rem;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     border-radius: 10px;
     padding: 10px;
     margin: 5px 0;
@@ -652,7 +655,7 @@ footer span {
 
 #todo_day a {
     display: inline-block;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     height: 3rem;
     width: 3rem;
     line-height: 3rem;
@@ -673,7 +676,7 @@ footer span {
 }
 
 .todo_row {
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     padding: 10px;
     border-radius: 5px;
     margin: 5px 0;
@@ -691,7 +694,7 @@ footer span {
     text-align: center;
     font-size: 1rem;
     border: none;
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     border-radius: 5px;
     outline: none;
 }
@@ -710,7 +713,7 @@ footer span {
 }
 
 .vote_row {
-    background-color: var(--theme-2);
+    background-color: var(--theme-3);
     padding: 10px;
     border-radius: 5px;
     margin: 5px 0;
