@@ -69,7 +69,7 @@ function insertMobileNav(loc) {
 function insertFooter() {
     var footer = document.getElementsByTagName('footer')[0];
     var img = document.createElement('img');
-    img.src = `${origin}/images/logos/JFU_logo_5.png`;
+    img.src = `${origin}/images/logos/JFU_logo_handwritten.png`;
     var slogan = document.createElement('p');
     slogan.id = "slogan";
     slogan.innerHTML = "언제나 어디서나 뭘 하든,<br> 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합";

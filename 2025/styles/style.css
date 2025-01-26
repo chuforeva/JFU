@@ -357,7 +357,7 @@ footer {
 footer img {
     height: 100px;
     width: 400px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: 0 48%;
     filter: grayscale(100%);
 }
