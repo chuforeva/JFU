@@ -19,13 +19,13 @@ function insertNav(loc) {
     logo_href.style = "text-decoration: none";
 
     var logo_1 = document.createElement('img');
-    logo_1.src = `${origin}/images/logos/JFU_logo_4.png`;
+    logo_1.src = `${origin}/images/logos/JFU_logo_handwritten.png`;
     logo_1.id = "nav_logo_1";
     logo_href.appendChild(logo_1);
-    var logo_2 = document.createElement('img');
-    logo_2.src = `${origin}/images/logos/JFU_logo_3.png`;
-    logo_2.id = "nav_logo_2";
-    logo_href.appendChild(logo_2);
+    // var logo_2 = document.createElement('img');
+    // logo_2.src = `${origin}/images/logos/JFU_logo_3.png`;
+    // logo_2.id = "nav_logo_2";
+    // logo_href.appendChild(logo_2);
     nav.appendChild(logo_href);
 
     nav.appendChild(getNavBtn(loc, "메인", '/'));
