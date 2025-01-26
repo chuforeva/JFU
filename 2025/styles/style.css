@@ -283,10 +283,10 @@ main a.btn2 {
     display: inline-block;
     text-decoration: none;
     background-color: white;
-    color: #625b95;
+    color: var(--theme-1);
     padding: 10px 15px;
     border-radius: 20px;
-    border: 1px solid #625b95;
+    border: 1px solid var(--theme-1);
     margin: 5px;
 }
 
