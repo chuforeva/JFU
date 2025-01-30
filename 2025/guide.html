@@ -43,11 +43,45 @@
                 <div class="main_box_header">
                     <i class="fa-solid fa-headphones"></i> <span>음원 스트리밍 가이드</span>
                 </div>
+                <h1 id="melon"><img src="images/icons/melon.png" class="app_icon"><span>멜론 (MELON)</span></h1>
+                <img src="images/guides/melon_streaming_1.png">
+                <img src="images/guides/melon_streaming_2.png">
+                <img src="images/guides/melon_streaming_3.png">
             </div>
             <div class="main_box guide_box" data-value="music_download">
                 <div class="main_box_header">
                     <i class="fa-solid fa-download"></i> <span>음원 다운로드 가이드</span>
                 </div>
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <a href="#melon" class="btn">멜론 (MELON)</a>
+                    <a href="#genie" class="btn">지니 (GENIE)</a>
+                    <a href="#bugs" class="btn">벅스 (BUGS)</a>
+                    <a href="#vibe" class="btn">바이브 (VIBE)</a>
+                    <a href="#kakao" class="btn">카카오뮤직 (KAKAO MUSIC)</a>
+                </div>
+                <h1 id="melon"><img src="images/icons/melon.png" class="app_icon"><span>멜론 (MELON)</span></h1>
+                <img src="images/guides/melon_download_1.png">
+                <img src="images/guides/melon_download_2.png">
+                <img src="images/guides/melon_download_3.png">
+                <img src="images/guides/melon_download_4.png">
+                <h1 id="genie"><img src="images/icons/genie.png" class="app_icon"><span>지니 (GENIE)</span></h1>
+                <img src="images/guides/genie_download_1.png">
+                <img src="images/guides/genie_download_2.png">
+                <img src="images/guides/genie_download_3.png">
+                <img src="images/guides/genie_download_4.png">
+                <h1 id="bugs"><img src="images/icons/bugs.png" class="app_icon"><span>벅스 (BUGS)</span></h1>
+                <img src="images/guides/bugs_download_1.png">
+                <img src="images/guides/bugs_download_2.png">
+                <img src="images/guides/bugs_download_3.png">
+                <h1 id="vibe"><img src="images/icons/vibe.png" class="app_icon"><span>바이브 (VIBE)</span></h1>
+                <img src="images/guides/vibe_download_1.png">
+                <img src="images/guides/vibe_download_2.png">
+                <img src="images/guides/vibe_download_3.png">
+                <h1 id="kakao"><img src="images/icons/kakaomusic.png" class="app_icon"><span>카카오뮤직 (KAKAO MUSIC)</span>
+                </h1>
+                <img src="images/guides/kakao_download_1.png">
+                <img src="images/guides/kakao_download_2.png">
+                <img src="images/guides/kakao_download_3.png">
             </div>
             <div class="main_box guide_box" data-value="music_present">
                 <div class="main_box_header">
@@ -66,7 +100,7 @@
             </div>
         </div>
         <div class="main_right">
-            
+
             <div class="main_box">
                 <div class="main_box_header">
                     <i class="fa-solid fa-link"></i> <span>유용한 링크</span>
@@ -74,7 +108,7 @@
                 <div>
                     <a href="https://www.melon.com/buy/pamphlet/all.htm" class="btn_list" target="_blank"><i
                             class="fa-solid fa-ticket"></i> 멜론 이용권 구매</a>
-                    <a href="http://mw.genie.co.kr/product/productMain" class="btn_list" target="_blank"><i
+                    <a href="https://pay.genie.co.kr/buy/recommend" class="btn_list" target="_blank"><i
                             class="fa-solid fa-ticket"></i> 지니 이용권 구매</a>
                     <a href="https://pay.bugs.co.kr/pay/mobile/product?enc=bugsMobileWeb&appname=web&ver=pay&tabName=product"
                         class="btn_list" target="_blank"><i class="fa-solid fa-ticket"></i> 벅스 이용권 구매</a>
@@ -121,13 +155,17 @@
         }
 
         function guideChange(select) {
-            for (var node of document.getElementsByClassName('guide_box')) {
-                if (node.getAttribute('data-value') == select.value) {
-                    node.setAttribute('style', 'display: block');
-                } else {
-                    node.removeAttribute('style');
-                }
-            }
+            let url = new URL(window.location.href);
+            url.searchParams.set('p', select.value);
+            window.location.href = url;
+            // location.href = "https://" + window.location.host + window.location.pathname + "?p=" + select.value;
+            // for (var node of document.getElementsByClassName('guide_box')) {
+            //     if (node.getAttribute('data-value') == select.value) {
+            //         node.setAttribute('style', 'display: block');
+            //     } else {
+            //         node.removeAttribute('style');
+            //     }
+            // }
         }
 
     </script>
