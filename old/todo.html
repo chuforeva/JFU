@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JISOO FAN UNION | TODAY'S TO DO LIST</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script type="text/javascript" src="../scripts/functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<style>
+    .collapsible {
+        width: 100%;
+        text-align: left;
+        font-size: 20px;
+        opacity: 0.5;
+        background-color: transparent;
+        color: var(--burgundy);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .collapsible:hover,
+    .collapsible.active {
+        opacity: 1;
+    }
+    
+    .collapsible:first-child {
+        border-top: 1px solid rgba(var(--burgundyRGB), 0.5) !important;
+    }
+    
+    .collapsible i {
+        float: right;
+        margin-left: 5px;
+        margin-top: 3px;
+    }
+    
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(var(--burgundyRGB), 0.5);
+        transition: max-height 0.2s ease;
+    }
+    
+    .content p {
+        margin-top: 20px;
+    }
+    
+    .btn {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .btn:last-child {
+        margin-bottom: 10px;
+    }
+</style>
+
+<body onload="loadTodo()">
+
+    <nav class="mobile"></nav>
+    <header></header>
+    <nav class="pc center"></nav>
+
+    <main class="center">
+        <div class="guide-text">
+            <img class="guide-image" src="images/todo.png">
+        </div>
+
+        <button class="collapsible" data-id="1" onclick="toggle(this)">월요일 MONDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="1">
+        </div>
+
+        <button class="collapsible" data-id="2" onclick="toggle(this)">화요일 TUESDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="2">
+        </div>
+
+        <button class="collapsible" data-id="3" onclick="toggle(this)">수요일 WEDNESDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="3">
+        </div>
+
+        <button class="collapsible" data-id="4" onclick="toggle(this)">목요일 THURSDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="4">
+        </div>
+
+        <button class="collapsible" data-id="5" onclick="toggle(this)">금요일 FRIDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="5">
+        </div>
+
+        <button class="collapsible" data-id="6" onclick="toggle(this)">토요일 SATURDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="6">
+        </div>
+
+        <button class="collapsible" data-id="0" onclick="toggle(this)">일요일 SUNDAY <i class="fa-solid fa-angle-down"></i></button>
+        <div class="content" data-id="0">
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        init();
+
+        function loadTodo() {
+            fetch(window.location.origin + "/data.json")
+                .then((res) => res.json())
+                .then((json) => {
+                    var test = document.getElementById("test");
+                    var todo = new Object();
+                    for (var i = 0; i < 7; i++) {
+                        todo[i] = new Array();
+                    }
+
+                    for (list of json.todo) {
+                        if (list.date != null) {
+                            if (list.date.end != null) {
+                                if (list.date.start.day < list.date.end.day) {
+                                    for (var i = list.date.start.day; i <= list.date.end.day; i++) {
+                                        todo[i].push(list);
+                                    }
+                                } else {
+                                    for (var i = list.date.start.day; i < 7; i++) {
+                                        todo[i].push(list);
+                                    }
+                                    for (var i = 0; i <= list.date.end.day; i++) {
+                                        todo[i].push(list);
+                                    }
+                                }
+                            } else {
+                                todo[list.date.start.day].push(list);
+                            }
+                        } else {
+                            for (var i = 0; i < 7; i++) {
+                                todo[i].push(list);
+                            }
+                        }
+                    }
+
+                    for (i in todo) {
+                        var btns = document.getElementsByClassName("content")
+                        for (btn of btns) {
+                            if (btn.getAttribute("data-id") == i) {
+                                var div1 = document.createElement("div");
+                                div1.classList.add("pc-col-6");
+                                var div2 = document.createElement("div");
+                                div2.classList.add("pc-col-6");
+                                for (l of todo[i]) {
+                                    var a = document.createElement("a");
+
+                                    if (l.site == null) {
+                                        a.innerText = l.title;
+                                    } else {
+                                        if (l.date) {
+                                            if (l.date.start.day == i) {
+                                                a.innerText = l.title + "\n(" + l.site + " / " + l.date.start.time + " 이후)";
+                                            } else if (l.date.start.end == i) {
+                                                a.innerText = l.title + "\n(" + l.site + " / " + l.date.start.time + " 마감)";
+                                            } else {
+                                                a.innerText = l.title + " (" + l.site + ")";
+                                            }
+                                        } else {
+                                            a.innerText = l.title + " (" + l.site + ")";
+                                        }
+                                    }
+
+                                    a.setAttribute("href", l.link);
+                                    if (!l.link.includes("javascript")) {
+                                        a.setAttribute("target", "_blank");
+                                    }
+                                    a.classList.add("btn");
+                                    a.classList.add("btn-full");
+                                    if (l.date != null) {
+                                        a.classList.add("btn-primary");
+                                        div1.appendChild(a);
+                                    } else {
+                                        a.classList.add("btn-secondary");
+                                        div2.appendChild(a);
+                                    }
+                                }
+                                btn.appendChild(div1);
+                                btn.appendChild(div2);
+                            }
+                        }
+                        openToday();
+                    }
+                });
+        }
+
+        function openToday() {
+            var day = (new Date).getDay();
+
+            var btns = document.getElementsByClassName("collapsible");
+            for (btn of btns) {
+                if (btn.getAttribute("data-id") == day.toString()) {
+                    toggle(btn);
+                }
+            }
+        }
+
+        function toggle(btn) {
+            var contents = document.getElementsByClassName("content");
+            for (content of contents) {
+                if (content.getAttribute("data-id") == btn.getAttribute("data-id")) {
+                    if (!btn.classList.contains("active")) {
+                        btn.classList.add("active");
+                        btn.lastChild.classList.remove("fa-angle-down");
+                        btn.lastChild.classList.add("fa-angle-up");
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        btn.classList.remove("active");
+                        btn.lastChild.classList.add("fa-angle-down");
+                        btn.lastChild.classList.remove("fa-angle-up");
+                        content.style.maxHeight = null;
+                    }
+                }
+            }
+        }
+    </script>
+</body>

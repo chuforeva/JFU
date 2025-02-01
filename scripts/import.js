@@ -1,9 +1,4 @@
-const test = true;
 let origin = window.location.origin;
-
-if (test) {
-    origin = `${window.location.origin}/2025`;
-}
 
 function init(loc) {
     insertNav(loc);
@@ -22,10 +17,6 @@ function insertNav(loc) {
     logo_1.src = `${origin}/images/logos/JFU_logo_handwritten.png`;
     logo_1.id = "nav_logo_1";
     logo_href.appendChild(logo_1);
-    // var logo_2 = document.createElement('img');
-    // logo_2.src = `${origin}/images/logos/JFU_logo_3.png`;
-    // logo_2.id = "nav_logo_2";
-    // logo_href.appendChild(logo_2);
     nav.appendChild(logo_href);
 
     nav.appendChild(getNavBtn(loc, "메인", '/'));
@@ -33,7 +24,7 @@ function insertNav(loc) {
     nav.appendChild(getNavBtn(loc, "원클릭 스밍리스트", '/oneclick'));
     nav.appendChild(getNavBtn(loc, "가이드", '/guide'));
     nav.appendChild(getNavBtn(loc, "투표", '/vote'));
-    nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventsub?eve_no=6512415&biz_no=967'));
+    // nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventsub?eve_no=6512415&biz_no=967'));
 }
 
 function getNavBtn(loc, text, url) {

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+    <title>JISOO FAN UNION</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script type="text/javascript" src="scripts/functions.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:title" content="JISOO FAN UNION">
+    <meta property="og:description" content="언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합">
+</head>
+
+<body>
+    <nav class="mobile"></nav>
+
+    <header>
+        <img src="images/logos/JFU_logo_5.png" alt="JFU Logo" id="header-logo">
+    </header>
+
+    <div class="center box" id="home-slogan">
+        언제나 어디서나 뭘 하든,<br> 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합
+    </div>
+
+    <div class="center">
+        <iframe src="https://www.youtube.com/embed/YudHcBIxlYw?autoplay=1&loop=1&playlist=YudHcBIxlYw" title="JISOO - VISUAL FILM #1" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+
+    <main id="home-main">
+    </main>
+
+    <footer></footer>
+
+    <script>
+        init();
+        insertMain();
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 5000);
+        }
+
+        function insertMain() {
+            fetch(window.location.origin + "/data.json")
+                .then((res) => res.json())
+                .then((json) => {
+                    var html = "<div class='center box'>";
+
+                    for (li of json.nav) {
+
+                        if (!Array.isArray(li.link)) {
+                            if (li.link.includes("javascript:comingsoon()")) {
+                                html += `<a class="btn btn-primary btn-disable" href="${li.link}" title="COMING SOON">${li.title}</a>`;
+
+                            } else if (li.link.includes("http")) {
+                                html += `<a class="btn btn-primary" href="${li.link}" target="_blank">${li.title}</a>`;
+
+                            } else if (li.link.includes("javascript")) {
+                                html += `<a class="btn btn-primary" href="${li.link}">${li.title}</a>`;
+
+                            } else {
+                                html += `<a class="btn btn-primary" href="${window.location.origin + li.link}">${li.title}</a>`;
+                            }
+
+                        } else {
+                            html += `<h2>${li.title}</h2>`;
+                            for (sub of li.link) {
+                                if (sub.link.includes("javascript:comingsoon()")) {
+                                    html += `<a class="btn btn-secondary btn-disable" href="${sub.link}" title="COMING SOON">${sub.title}</a>`;
+
+                                } else if (sub.link.includes("http")) {
+                                    html += `<a class="btn btn-secondary" href="${sub.link}" target="_blank">${sub.title}</a>`;
+
+                                } else if (sub.link.includes("javascript")) {
+                                    html += `<a class="btn btn-secondary" href="${sub.link}">${sub.title}</a>`;
+
+                                } else {
+                                    html += `<a class="btn btn-secondary" href="${window.location.origin + sub.link}">${sub.title}</a>`;
+                                }
+
+                            }
+                        }
+                    }
+                    html += `</div>`;
+
+                    var main = document.getElementById("home-main");
+                    main.innerHTML = html;
+                });
+        }
+    </script>
+</body>

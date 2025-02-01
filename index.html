@@ -4,12 +4,14 @@
     <title>JISOO FAN UNION</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+    <link rel="shortcut icon" href="icon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script type="text/javascript" src="scripts/functions.js"></script>
+    <script type="text/javascript" src="scripts/import.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.png">
@@ -21,93 +23,141 @@
 </head>
 
 <body>
-    <nav class="mobile"></nav>
+    <nav></nav>
 
     <header>
-        <img src="images/logos/JFU_logo_5.png" alt="JFU Logo" id="header-logo">
+        <!-- <div id="header_youtube">
+            <iframe
+                src="https://www.youtube.com/embed/7JF8GpBjXH4?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playlist=7JF8GpBjXH4&vq=hd1080"
+                title="JISOO COMING SOON" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+                allowfullscreen></iframe>
+        </div> -->
+        <div class="slider">
+            <div class="banner"></div>
+            <button class="banner_nav prev">&#10094;</button>
+            <button class="banner_nav next">&#10095;</button>
+        </div>
     </header>
 
-    <div class="center box" id="home-slogan">
-        언제나 어디서나 뭘 하든,<br> 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합
-    </div>
+    <main>
+        <div class="main_left">
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-star"></i> <span>즐겨찾기</span>
+                </div>
+                <div style="text-align: center;">
+                    <a href="todo" class="btn"><i class="fa-solid fa-check"></i> 투두리스트</a>
+                    <a href="oneclick" class="btn"><i class="fa-solid fa-hand-pointer"></i> 원클릭 스밍리스트</a>
+                    <a href="guide" class="btn"><i class="fa-solid fa-book"></i> 가이드</a>
+                    <a href="http://m2.melon.com/buy/meloncash/charge.htm" class="btn" target="_blank"><i class="fa-solid fa-coins"></i> 멜론 캐시 충전</a>
+                    <!-- <a href="https://kr.ktown4u.com/eventsub?eve_no=6512415&biz_no=967" class="btn" target="_blank"><i class="fa-solid fa-compact-disc"></i> 앨범 공동구매</a> -->
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-star"></i> <span>타임 테이블</span>
+                </div>
+                <div style="text-align: center;">
+                   <img src="images/timetable.jpg" style="border-radius: 5px;">
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-chart-simple"></i> <span>음원차트 차트인 현황</span>
+                </div>
+                <div id="melon_top100" class="chart_box">
+                    <div id="melon_header" class="chart_header"><a href="https://www.melon.com/chart/index.htm"
+                            target="_blank">멜론 TOP 100 <i class="fa-solid fa-chevron-right"></i></a>
+                        <div id="melon_time" class="chart_time"></div>
+                    </div>
+                </div>
+                <div id="genie_realtime">
+                    <div id="genie_header" class="chart_header"><a href="https://www.genie.co.kr/chart/top200"
+                            target="_blank">지니 실시간 <i class="fa-solid fa-chevron-right"></i></a>
+                        <div id="genie_time" class="chart_time"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="center">
-        <iframe src="https://www.youtube.com/embed/YudHcBIxlYw?autoplay=1&loop=1&playlist=YudHcBIxlYw" title="JISOO - VISUAL FILM #1" id="youtube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-    </div>
-
-    <main id="home-main">
+        <div class="main_right">
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-brands fa-youtube"></i> <span>유튜브 실시간 수치</span>
+                </div>
+                <iframe src="https://www.youtube.com/embed/7JF8GpBjXH4?autoplay=0&mute=0" title="JISOO COMING SOON"
+                    id="youtube_embed" frameborder="0" allowfullscreen></iframe>
+                <div id="youtube_view">조회수<span>10,000</span></div>
+                <div id="youtube_like">좋아요<span>2000</span></div>
+                <div id="youtube_comment">댓글<span>33333</span></div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-heart"></i> <span>멜론 스트리밍 카드</span>
+                </div>
+                <div id="streaming_card">
+                    <div id="streaming_card_song"></div>
+                    <div id="streaming_card_artist"></div>
+                    <div id="streaming_card_detail">
+                        <div id="streaming_card_album_cover"></div>
+                        <div id="streaming_card_number">
+                            <div id="streaming_card_total_header">전체 스트리밍</div>
+                            <div id="streaming_card_total"></div>
+                            <div id="streaming_card_listener_header">전체 감상자</div>
+                            <div id="streaming_card_listener"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-brands fa-x-twitter"></i> <span>지수팬연합 소식</span>
+                </div>
+                <a class="twitter-timeline" data-lang="ko" data-width="100%" data-height="500" data-dnt="true"
+                    data-theme="light" data-chrome="noheader noborders"
+                    href="https://twitter.com/Jisoo_Fan_Union?ref_src=twsrc%5Etfw"></a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="main_box">
+                <div class="main_box_header">
+                    <i class="fa-solid fa-link"></i> <span>바로가기</span>
+                </div>
+                <a href="https://x.com/Jisoo_Fan_Union" class="link_box" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i> 지수팬연합 X
+                </a>
+                <a href="https://www.youtube.com/@sooyaaa__" class="link_box" target="_blank">
+                    <i class="fa-brands fa-youtube"></i> 지수 유튜브
+                </a>
+                <a href="https://www.instagram.com/sooyaaa__/" class="link_box" target="_blank">
+                    <i class="fa-brands fa-instagram"></i> 지수 인스타
+                </a>
+                <a href="https://blissoo.co.kr/" class="link_box" target="_blank">
+                    <i class="fa-solid fa-globe"></i> 블리수 공홈
+                </a>
+            </div>
+        </div>
     </main>
 
-    <footer></footer>
+    <footer>
+    </footer>
 
     <script>
-        init();
-        insertMain();
-        let slideIndex = 0;
-        showSlides();
+        init(window.location);
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slides");
+        const video_id = '7JF8GpBjXH4';
+        const song_id = '36331121';
+        const melon_artists = ['995174'];
+        const genie_artists = ['80539782'];
 
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 5000);
-        }
+        getYouTubeRecord(video_id);
+        getStreamingCard(song_id);
+        getMelonTop100(melon_artists);
+        getGenieRealTime(genie_artists);
+        slider();
 
-        function insertMain() {
-            fetch(window.location.origin + "/data.json")
-                .then((res) => res.json())
-                .then((json) => {
-                    var html = "<div class='center box'>";
-
-                    for (li of json.nav) {
-
-                        if (!Array.isArray(li.link)) {
-                            if (li.link.includes("javascript:comingsoon()")) {
-                                html += `<a class="btn btn-primary btn-disable" href="${li.link}" title="COMING SOON">${li.title}</a>`;
-
-                            } else if (li.link.includes("http")) {
-                                html += `<a class="btn btn-primary" href="${li.link}" target="_blank">${li.title}</a>`;
-
-                            } else if (li.link.includes("javascript")) {
-                                html += `<a class="btn btn-primary" href="${li.link}">${li.title}</a>`;
-
-                            } else {
-                                html += `<a class="btn btn-primary" href="${window.location.origin + li.link}">${li.title}</a>`;
-                            }
-
-                        } else {
-                            html += `<h2>${li.title}</h2>`;
-                            for (sub of li.link) {
-                                if (sub.link.includes("javascript:comingsoon()")) {
-                                    html += `<a class="btn btn-secondary btn-disable" href="${sub.link}" title="COMING SOON">${sub.title}</a>`;
-
-                                } else if (sub.link.includes("http")) {
-                                    html += `<a class="btn btn-secondary" href="${sub.link}" target="_blank">${sub.title}</a>`;
-
-                                } else if (sub.link.includes("javascript")) {
-                                    html += `<a class="btn btn-secondary" href="${sub.link}">${sub.title}</a>`;
-
-                                } else {
-                                    html += `<a class="btn btn-secondary" href="${window.location.origin + sub.link}">${sub.title}</a>`;
-                                }
-
-                            }
-                        }
-                    }
-                    html += `</div>`;
-
-                    var main = document.getElementById("home-main");
-                    main.innerHTML = html;
-                });
+        if (!document.referrer || (document.referrer && !document.referrer.startsWith(window.location.origin))) {
+            popup();
         }
     </script>
 </body>
