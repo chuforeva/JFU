@@ -149,6 +149,42 @@ nav a.selected {
 }
 
 /* HEADER */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center; 
+    align-items: center;
+}
+
+.banner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    /* user-select: none; */
+}
+
+.banner_nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.banner_nav.prev { left: 10px; }
+.banner_nav.next { right: 10px; }
+
 #header_youtube {
     width: 100%;
     overflow: hidden;
@@ -169,7 +205,7 @@ nav a.selected {
         height: 500px;
     }
 
-    #header_banner {
+    #header_banner, .banner img {
         height: 400px;
     }
 }
@@ -179,7 +215,7 @@ nav a.selected {
         height: 40vw;
     }
 
-    #header_banner {
+    #header_banner, .banner img {
         height: 150px;
     }
 }
@@ -707,6 +743,25 @@ footer span {
 
 .guide_box {
     display: none;
+}
+
+.guide_btn {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.guide_btn a {
+    width: 5rem;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgb(150, 150, 150) 0 0 5px;
+    margin: 5px;
+}
+
+.guide_btn a img {
+    width: 5rem !important;
+    border-radius: 10px;
 }
 
 /* VOTE */

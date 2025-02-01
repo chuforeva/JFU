@@ -4,7 +4,7 @@
     <title>JISOO FAN UNION</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="icon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -33,7 +33,11 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
                 allowfullscreen></iframe>
         </div> -->
-        <img src="images/amortage_banner_2.jpeg" id="header_banner" />
+        <div class="slider">
+            <div class="banner"></div>
+            <button class="banner_nav prev">&#10094;</button>
+            <button class="banner_nav next">&#10095;</button>
+        </div>
     </header>
 
     <main>
@@ -150,8 +154,8 @@
         getStreamingCard(song_id);
         getMelonTop100(melon_artists);
         getGenieRealTime(genie_artists);
+        slider();
 
-        console.log(document.referrer)
         if (!document.referrer || (document.referrer && !document.referrer.startsWith(window.location.origin))) {
             popup();
         }
