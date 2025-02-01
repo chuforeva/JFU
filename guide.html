@@ -37,7 +37,6 @@
                     <option value="music_present">음원 선물하기 가이드</option>
                     <option value="streaming_plan">음원사이트 권장 스트리밍권</option>
                     <option value="video_streaming">뮤직비디오 스트리밍 가이드</option>
-                    <!-- <option value="radio_request">라디오 신청 가이드</option> -->
                 </select>
             </div>
             <div class="main_box guide_box" data-value="music_streaming">
@@ -58,6 +57,18 @@
                 <img src="images/guides/melon_streaming_1.png">
                 <img src="images/guides/melon_streaming_2.png">
                 <img src="images/guides/melon_streaming_3.png">
+                <h1 id="genie_streaming"><img src="images/icons/genie.png" class="app_icon"><span>지니 (GENIE)</span></h1>
+                <div class="img_placeholder"></div>
+                <h1 id="bugs_streaming"><img src="images/icons/bugs.png" class="app_icon"><span>벅스 (BUGS)</span></h1>
+                <div class="img_placeholder"></div>
+                <h1 id="vibe_streaming"><img src="images/icons/vibe.png" class="app_icon"><span>바이브 (VIBE)</span></h1>
+                <div class="img_placeholder"></div>
+                <h1 id="flo_streaming"><img src="images/icons/flo.png" class="app_icon"><span>플로 (FLO)</span></h1>
+                <div class="img_placeholder"></div>
+                <h1 id="apple_streaming"><img src="images/icons/applemusic.png" class="app_icon"><span>애플뮤직 (APPLE MUSIC)</span></h1>
+                <div class="img_placeholder"></div>
+                <h1 id="spotify_streaming"><img src="images/icons/spotify.jpg" class="app_icon"><span>스포티파이 (SPOTIFY)</span></h1>
+                <div class="img_placeholder"></div>
                 <h1 id="ios_guide"><img src="images/icons/ios.png" class="app_icon"><span>iOS 단축어 가이드</span></h1>
                 <img src="images/guides/ios_guide_1.png">
                 <img src="images/guides/ios_guide_2.png">
@@ -102,6 +113,8 @@
                 <div class="main_box_header">
                     <i class="fa-solid fa-gift"></i> <span>음원 선물하기 가이드</span>
                 </div>
+                <h1 id="melon_present"><img src="images/icons/melon.png" class="app_icon"><span>멜론 (MELON)</span></h1>
+                <div class="img_placeholder"></div>
             </div>
             <div class="main_box guide_box" data-value="streaming_plan">
                 <div class="main_box_header">
@@ -212,6 +225,7 @@
         function guideChange(select) {
             let url = new URL(window.location.href);
             url.searchParams.set('p', select.value);
+            url.hash = '';
             window.location.href = url;
             // location.href = "https://" + window.location.host + window.location.pathname + "?p=" + select.value;
             // for (var node of document.getElementsByClassName('guide_box')) {
