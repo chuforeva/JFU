@@ -166,7 +166,7 @@ nav a.selected {
     width: 100%;
     flex-shrink: 0;
     object-fit: cover;
-    /* user-select: none; */
+    user-select: none;
 }
 
 .banner_nav {
