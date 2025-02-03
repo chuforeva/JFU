@@ -24,7 +24,7 @@ function insertNav(loc) {
     nav.appendChild(getNavBtn(loc, "원클릭 스밍리스트", '/oneclick'));
     nav.appendChild(getNavBtn(loc, "가이드", '/guide'));
     nav.appendChild(getNavBtn(loc, "투표", '/vote'));
-    // nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventsub?eve_no=6512415&biz_no=967'));
+    nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventinfo?eve_no=42960748&biz_no=967'));
 }
 
 function getNavBtn(loc, text, url) {
