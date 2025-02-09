@@ -200,6 +200,15 @@ nav a.selected {
     display: block;
 }
 
+#header_youtube iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: fill;
+    object-position: 0 50%;
+    position: absolute;
+}
+
 @media (min-width: 1200px) {
     #header_youtube {
         height: 500px;
@@ -207,6 +216,10 @@ nav a.selected {
 
     #header_banner, .banner img {
         height: 400px;
+    }
+    
+    #header_youtube iframe {
+        top: -50%;
     }
 }
 
@@ -218,16 +231,10 @@ nav a.selected {
     #header_banner, .banner img {
         height: 150px;
     }
-}
-
-#header_youtube iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: fill;
-    object-position: 0 50%;
-    position: absolute;
-    top: -25%;
+    
+    #header_youtube iframe {
+        top: -25%;
+    }
 }
 
 /* MAIN */
