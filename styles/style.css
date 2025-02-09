@@ -369,6 +369,7 @@ main .main_box h1 img.app_icon {
     margin-right: 1rem;
     border-radius: 10px;
     box-shadow: rgb(200, 200, 200) 0 0 5px;
+    object-fit: contain;
 }
 
 main .main_box h1 span {
