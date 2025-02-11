@@ -481,6 +481,26 @@ footer span {
     width: 100%;
 }
 
+/* BOOKMARKS */
+.bookmarks a {
+    display: inline-block;
+}
+
+.bookmarks img {
+    border-radius: 10px;
+}
+
+@media (min-width: 1200px) {
+    .bookmarks img {
+        width: 19rem !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .bookmarks img {
+        width: 12.5rem !important;
+    }
+}
 
 /* MELON STREAMING CARD */
 #streaming_card {
