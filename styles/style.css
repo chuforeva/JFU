@@ -498,7 +498,7 @@ footer span {
 
 @media screen and (max-width: 1200px) {
     .bookmarks img {
-        width: 12.5rem !important;
+        width: 45vw !important;
     }
 }
 
