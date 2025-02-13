@@ -103,6 +103,10 @@ nav a.selected {
         object-position: 0% 48%;
         margin-left: -70px;
     }
+    
+    nav a:first-of-type {
+        margin-right: 0 !important;
+    }
 
     nav a:nth-child(n+2) {
         display: none;

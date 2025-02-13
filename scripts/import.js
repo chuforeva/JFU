@@ -25,6 +25,11 @@ function insertNav(loc) {
     nav.appendChild(getNavBtn(loc, "가이드", '/guide'));
     nav.appendChild(getNavBtn(loc, "투표", '/vote'));
     nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventinfo?eve_no=42960748&biz_no=967'));
+
+    var release = document.createElement("span");
+    release.innerHTML = "<b style='display: block;'>&lt;AMORTAGE&gt;</b><span style='font-size: 0.8rem; white-space: nowrap;'>2025.02.14 2PM KST</span>";
+    release.style = "margin-left: auto; margin-right: 1rem; text-align: center;"
+    nav.appendChild(release);
 }
 
 function getNavBtn(loc, text, url) {
