@@ -98,7 +98,7 @@ function getMelonTop100(artists) {
 }
 
 function getGenieRealTime(artists) {
-    const url = "https://app.genie.co.kr/chart/j_RealTimeRankSongList.json?pg=1&pgsize=100";
+    const url = "https://app.genie.co.kr/chart/j_RealTimeRankSongList.json?pg=1&pgsize=200";
 
     fetch(url)
         .then(response => {

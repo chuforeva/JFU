@@ -589,22 +589,17 @@ footer span {
     display: inline-block;
 }
 
-.chart_song_rank {
-    line-height: 3rem;
-    font-size: 1.2rem;
-    width: 2rem;
-}
 
 .chart_song_rank {
     line-height: 3rem;
     font-size: 1.2rem;
-    width: 1.5rem;
+    width: 3rem;
     text-align: center;
 }
 
 .chart_song_rank_diff {
     line-height: 3rem;
-    width: 3rem;
+    width: 3.5rem;
     text-align: center;
     color: rgb(100, 100, 100);
 }
