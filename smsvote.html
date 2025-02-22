@@ -23,7 +23,14 @@
 <body>
     <script>
         window.onload = function() {
-            alert("페이지가 로드되었습니다! " + navigator.platform);
+            if (navigator.platform.includes("iPhone")) {
+                window.open(`sms:#${code}&body=${text}`);
+                // alert("페이지가 로드되었습니다! " + navigator.platform);
+            } else if (navigator.platform.includes("Linux")) {
+                window.open(`sms:%23${code}?body=${text}`);
+            } else {
+                alert("모바일에서 접속하면 메세지창으로 이동합니다");
+            }
         };
         // setTimeout(() => {
         //     if (navigator.platform.includes("iPhone")) {
