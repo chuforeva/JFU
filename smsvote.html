@@ -24,6 +24,14 @@
 
 <body>
     <script>
-        sendSMS('0505', '지수')
+        setTimeout(() => {
+            if (navigator.platform.includes("iPhone")) {
+                window.location.href = `sms:#${code}&body=${text}`;
+            } else if (navigator.platform.includes("Linux")) {
+                window.open(`sms:%23${code}?body=${text}`);
+            } else {
+                alert("모바일에서 접속하면 메세지창으로 이동합니다");
+            }
+    }, 100);
     </script>
 </body>
