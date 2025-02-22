@@ -22,15 +22,22 @@
 
 <body>
     <script>
-        window.onload = function() {
-            if (navigator.platform.includes("iPhone")) {
-                alert("페이지가 로드되었습니다! " + navigator.platform);
-                window.open(`sms:#${code}&body=${text}`);
-            } else if (navigator.platform.includes("Linux")) {
-                window.open(`sms:%23${code}?body=${text}`);
-            } else {
-                alert("모바일에서 접속하면 메세지창으로 이동합니다");
-            }
+        window.onload = function () {
+            sendSMS('0505', '지수');
+            // if (navigator.platform.includes("iPhone")) {
+            //     if (confirm("SMS 문자투표를 보냅니다")) {
+            //         // window.location.href = `sms:#0505&body=지수`;
+            //         window.open(`sms:#0505&body=지수`);
+            //     } else {
+            //         window.location.href = 'https://www.jisoofanunion.com';
+            //     }
+            //     alert("페이지가 로드되었습니다! " + navigator.platform);
+               
+            // } else if (navigator.platform.includes("Linux")) {
+            //     window.open(`sms:%23${code}?body=${text}`);
+            // } else {
+            //     alert("모바일에서 접속하면 메세지창으로 이동합니다");
+            // }
         };
         // setTimeout(() => {
         //     if (navigator.platform.includes("iPhone")) {
