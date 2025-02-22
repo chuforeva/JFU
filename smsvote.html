@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
-    <script type="text/javascript" src="scripts/import.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.jpg">
@@ -24,15 +22,18 @@
 
 <body>
     <script>
-        setTimeout(() => {
-            if (navigator.platform.includes("iPhone")) {
-                window.location.href = `sms:#${code}&body=${text}`;
-                alert("iphone test");
-            } else if (navigator.platform.includes("Linux")) {
-                window.open(`sms:%23${code}?body=${text}`);
-            } else {
-                alert("모바일에서 접속하면 메세지창으로 이동합니다");
-            }
-        }, 100);
+        window.onload = function() {
+            alert("페이지가 로드되었습니다! " + navigator.platform);
+        };
+        // setTimeout(() => {
+        //     if (navigator.platform.includes("iPhone")) {
+        //         window.location.href = `sms:#${code}&body=${text}`;
+        //         alert("iphone test");
+        //     } else if (navigator.platform.includes("Linux")) {
+        //         window.open(`sms:%23${code}?body=${text}`);
+        //     } else {
+        //         alert("모바일에서 접속하면 메세지창으로 이동합니다");
+        //     }
+        // }, 100);
     </script>
 </body>
