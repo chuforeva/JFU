@@ -27,11 +27,12 @@
         setTimeout(() => {
             if (navigator.platform.includes("iPhone")) {
                 window.location.href = `sms:#${code}&body=${text}`;
+                alert("iphone test");
             } else if (navigator.platform.includes("Linux")) {
                 window.open(`sms:%23${code}?body=${text}`);
             } else {
                 alert("모바일에서 접속하면 메세지창으로 이동합니다");
             }
-    }, 100);
+        }, 100);
     </script>
 </body>
