@@ -70,7 +70,7 @@ function insertFooter() {
     slogan.id = "slogan";
     slogan.innerHTML = "언제나 어디서나 뭘 하든,<br> 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합";
     var span = document.createElement('span');
-    span.innerHTML = "&copy; 2023-2025 JISOO FAN UNION | ALL FOR BLACKPINK JISOO<br>WARNING: ALL RIGHTS RESERVED | UNAUTHORIZED COMMERCIAL USE OR PUBLICATION IS PROHIBITED";
+    span.innerHTML = "&copy; 2023-2026 JISOO FAN UNION | ALL FOR BLACKPINK JISOO<br>WARNING: ALL RIGHTS RESERVED | UNAUTHORIZED COMMERCIAL USE OR PUBLICATION IS PROHIBITED";
     footer.appendChild(img);
     footer.appendChild(slogan);
     footer.appendChild(span);
