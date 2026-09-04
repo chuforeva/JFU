@@ -97,6 +97,60 @@ function getMelonTop100(artists) {
         });
 }
 
+function getMelonHot100(artists) {
+    const url = "https://m2.melon.com/m6/chart/hot100/list.json?cpId=AS40&cpKey=14LNC3&appVer=6.5.8.1";
+
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("melon_hot100_time").innerText = data['response']['RANKHOUR'] + " 기준";
+
+            var count = 0;
+            for (const song of data['response']['SONGLIST']) {
+                var found = false;
+                for (const artist of song['ARTISTLIST']) {
+                    if (artists.includes(artist['ARTISTID'])) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    var rank = song['CURRANK'];
+                    var diff = parseInt(song['PASTRANK']) - parseInt(song['CURRANK']);
+                    var album_img = song['ALBUMIMG'];
+                    var song_title = song['SONGNAME'];
+
+                    var artist_str = "";
+                    for (const artist of song['ARTISTLIST']) {
+                        artist_str += `${artist['ARTISTNAME']}, `;
+                    }
+                    artist_str = artist_str.substring(0, artist_str.length - 2);
+
+                    var div = createChartRow(rank, diff, album_img, song_title, artist_str);
+                    document.getElementById('melon_hot100').appendChild(div);
+                    count++;
+                }
+            }
+
+            if (count == 0) {
+                var div = document.createElement('div');
+                div.classList.add('chart_song');
+                div.innerHTML = '<i class="fa-solid fa-circle-exclamation" style="margin: 0 10px"></i> 현재 차트인 중인 곡이 없습니다';
+                div.style = 'color: rgb(100, 100, 100)';
+                document.getElementById('melon_hot100').appendChild(div);
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching Melon HOT100 data:', error);
+        });
+}
+
 function getGenieRealTime(artists) {
     const url = "https://app.genie.co.kr/chart/j_RealTimeRankSongList.json?pg=1&pgsize=200";
 

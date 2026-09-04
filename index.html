@@ -71,6 +71,12 @@
                         <div id="melon_time" class="chart_time"></div>
                     </div>
                 </div>
+                <div id="melon_hot100" class="chart_box">
+                    <div id="melon_hot100_header" class="chart_header"><a href="https://www.melon.com/chart/hot100/index.htm"
+                            target="_blank">멜론 HOT 100 <i class="fa-solid fa-chevron-right"></i></a>
+                        <div id="melon_hot100_time" class="chart_time"></div>
+                    </div>
+                </div>
                 <div id="genie_realtime">
                     <div id="genie_header" class="chart_header"><a href="https://www.genie.co.kr/chart/top200"
                             target="_blank">지니 실시간 <i class="fa-solid fa-chevron-right"></i></a>
@@ -143,6 +149,7 @@
         getYouTubeRecord(video_id);
         getStreamingCard(song_id);
         getMelonTop100(melon_artists);
+        getMelonHot100(melon_artists);
         getGenieRealTime(genie_artists);
         slider();
 
