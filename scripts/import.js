@@ -21,10 +21,10 @@ function insertNav(loc) {
 
     nav.appendChild(getNavBtn(loc, "메인", '/'));
     nav.appendChild(getNavBtn(loc, "투두리스트", '/todo'));
-    nav.appendChild(getNavBtn(loc, "원클릭 스밍리스트", '/oneclick'));
+    nav.appendChild(getNavBtn(loc, "원클릭 스밍리스트", '/click/'));
     nav.appendChild(getNavBtn(loc, "가이드", '/guide'));
     nav.appendChild(getNavBtn(loc, "투표", '/vote'));
-    nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventinfo?eve_no=42960748&biz_no=967', disabled=true));
+    nav.appendChild(getNavBtn(loc, '앨범 공동구매 <i class="fa-solid fa-up-right-from-square"></i>', 'https://kr.ktown4u.com/eventinfo?eve_no=44511229&biz_no=967', disabled=false));
 
     var release = document.createElement("span");
     release.innerHTML = "<b style='display: block;'>CLICK</b><span style='font-size: 0.8rem; white-space: nowrap;'>2026.09.04 1PM KST</span>";
