@@ -85,8 +85,7 @@ a:focus-visible {
     gap: clamp(24px, 4vw, 58px);
 }
 
-.desktop-nav a,
-.header-link {
+.desktop-nav a {
     color: var(--silver);
     font-size: 11px;
     letter-spacing: 0.15em;
@@ -102,22 +101,8 @@ a:focus-visible {
 }
 
 .desktop-nav a:hover,
-.header-link:hover,
 .text-link:hover {
     color: var(--blue);
-}
-
-.header-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 210px;
-    justify-content: flex-end;
-}
-
-.header-link span:last-child {
-    color: var(--blue);
-    font-size: 17.6px;
 }
 
 .hero {
@@ -1058,12 +1043,6 @@ a:focus-visible {
 
     .desktop-nav {
         display: none;
-    }
-
-    .header-link {
-        min-width: 0;
-        gap: 7px;
-        font-size: 9.9px;
     }
 
     .hero {
@@ -2192,12 +2171,6 @@ a:focus-visible {
     .desktop-nav a:last-child {
         border-bottom: 0;
     }
-
-    .site-header .header-link {
-        min-width: auto;
-        margin-left: 17px;
-    }
-}
 
 @media (max-width: 620px) {
     .page-main {
