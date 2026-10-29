@@ -1,259 +1,114 @@
-<!DOCTYPE html>
-
+<!doctype html>
+<html lang="ko">
 <head>
-    <title>JISOO FAN UNION | 음악방송 투표</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script type="text/javascript" src="scripts/import.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
-    <meta property="og:title" content="JISOO FAN UNION | 음악방송 투표">
-    <meta property="og:description" content="언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080a10">
+    <meta name="description" content="지수 음악방송 사전·실시간 투표 링크, 일정과 투표 앱 가이드를 확인하세요.">
+    <title>VOTE — JISOO FAN UNION</title>
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/main.js" defer></script>
 </head>
-
 <body>
-    <nav></nav>
-
-    <main>
-        <div class="main_left">
-            <div class="main_box vote_box" data-value="broadcast">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-trophy"></i> <span>음악방송 사전/실시간 투표</span>
-                </div>
-                <h1><img src="images/icons/inkigayo.webp" class="app_icon"><span>인기가요 (SBS)</span></h1>
-                <div class="vote_row">
-                    <h2>사전 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/diggus.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 월요일 11시 55분 ~ 금요일 23시 59분</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1계정 당 1일 1회 참여 가능</p>
-                            <div>
-                                <a href="https://lnk.diggus.com/vote" class="btn" target="_blank">디거스 사전 투표</a>
-                                <a href="vote?p=guide#diggus" class="btn2">디거스 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vote_row">
-                    <h2>실시간 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/higher.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 생방송 중 진행</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1계정 당 최대 5표</p>
-                            <div>
-                                <a href="https://bit.ly/3tpKkxX" class="btn" target="_blank">하이어 실시간 투표</a>
-                                <a href="vote?p=guide#higher" class="btn2">하이어 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vote_row">
-                    <h2>핫스테이지 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/higher.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 일요일 16시 40분 ~ 목요일 12시</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1계정 당 1일 5회 참여 가능</p>
-                            <div>
-                                <a href="https://bit.ly/3tpKkxX" class="btn" target="_blank">하이어 핫스테이지 투표</a>
-                                <a href="vote?p=guide#higher" class="btn2">하이어 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h1><img src="images/icons/musiccore.svg" class="app_icon"><span>쇼! 음악중심 (MBC)</span></h1>
-                <div class="vote_row">
-                    <h2>사전 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/mubeat.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 화요일 18시 ~ 목요일 11시</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 무제한 투표</p>
-                            <div>
-                                <a href="https://mubeat.tv/" class="btn" target="_blank">뮤빗 사전 투표</a>
-                                <a href="vote?p=guide#mubeat" class="btn2">뮤빗 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vote_row">
-                    <h2>실시간 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/mubeat.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 생방송 중 진행</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1계정 당 최대 5표</p>
-                            <div>
-                                <a href="https://mubeat.tv/" class="btn" target="_blank">뮤빗 실시간 투표</a>
-                                <a href="vote?p=guide#mubeat" class="btn2">뮤빗 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img src="images/guides/music_show_chart_1.PNG" style="margin-top: 2rem;">
-
-                <h1><img src="images/icons/musicbank.webp" class="app_icon"><span>뮤직뱅크 (KBS)</span></h1>
-                <div class="vote_row">
-                    <h2>사전 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/allchart.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 일요일 15시 ~ 수요일 11시</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 무제한 투표</p>
-                            <div>
-                                <a href="https://allchart.smtn.kr/audition/sector/13" class="btn" target="_blank">올차트 사전
-                                    투표</a>
-                                <a href="vote?p=guide#allchart" class="btn2">올차트 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h1><img src="images/icons/mcountdown.webp" class="app_icon"><span>엠카운트다운 (Mnet)</span></h1>
-                <div class="vote_row">
-                    <h2>사전 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/mnet.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 토요일 0시 ~ 월요일 23시 59분</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1기기 1계정 1일 5회 참여 가능</p>
-                            <div>
-                                <a href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO"
-                                    class="btn" target="_blank">엠넷플러스 사전 투표</a>
-                                <a href="vote?p=guide#mnet" class="btn2">엠넷플러스 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="vote_row">
-                    <h2>실시간 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/mnet.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 생방송 중 진행</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 1기기 1계정 1일 5회 참여 가능</p>
-                            <div>
-                                <a href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO"
-                                    class="btn" target="_blank">엠넷플러스 실시간 투표</a>
-                                <a href="vote?p=guide#mnet" class="btn2">엠넷플러스 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="images/guides/music_show_chart_2.PNG" style="margin-top: 2rem;">
-
-                <h1><img src="images/icons/showchampion.webp" class="app_icon"><span>쇼 챔피언 (SHOW CHAMPION)</span></h1>
-                <div class="vote_row">
-                    <h2>사전 투표</h2>
-                    <div class="vote_row_content">
-                        <img src="images/icons/idolchamp.png">
-                        <div class="vote_row_detail">
-                            <p><i class="fa-regular fa-clock"></i> 매주 금요일 20시 ~ 월요일 15시</p>
-                            <p><i class="fa-solid fa-triangle-exclamation"></i> 무제한 투표</p>
-                            <div>
-                                <a href="https://promo-web.idolchamp.com/app_proxy.html"
-                                    class="btn" target="_blank">아이돌챔프 앱 투표</a>
-                                <a href="vote?p=guide#idolchamp" class="btn2">아이돌챔프 사용 가이드</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <img src="images/guides/music_show_chart_3.PNG" style="margin-top: 2rem;">
+    <header class="site-header">
+        <a class="wordmark" href="./" aria-label="지수팬연합 홈"><span class="wordmark-mark">JFU</span><span class="wordmark-name">JISOO FAN UNION</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기"><span></span><span></span></button>
+        <nav class="desktop-nav" id="primary-nav" aria-label="주요 메뉴"></nav>
+        <a class="header-link" href="https://x.com/Jisoo_Fan_Union" target="_blank" rel="noopener noreferrer"><span>X에서 소식 받아보기</span><span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="page-main section-wrap">
+        <section class="page-intro">
+            <p class="eyebrow">EVERY VOTE COUNTS</p>
+            <h1>VOTE <em>FOR JISOO</em></h1>
+            <p>음악방송 사전·실시간 투표 링크와 참여 안내를 모았어요.<br>일정과 투표 방식은 방송 및 앱 사정에 따라 바뀔 수 있으니 최신 공지를 확인해 주세요.</p>
+        </section>
+        <nav class="guide-nav" aria-label="투표 페이지 목차">
+            <a href="#broadcast-vote">방송별 투표</a>
+            <a href="#vote-schedule">요일별 일정</a>
+            <a href="#vote-app-guides">투표앱 가이드</a>
+        </nav>
+        <section class="guide-section" id="broadcast-vote">
+            <div class="section-heading"><div><p class="eyebrow">01 / MUSIC SHOW</p><h2>음악방송 사전·실시간 투표</h2></div></div>
+            <div class="vote-grid">
+                <article class="vote-card">
+                    <div class="vote-card-title"><img src="./images/icons/inkigayo.webp" alt=""><div><span class="card-number">SBS · INKIGAYO</span><h3>인기가요</h3></div></div>
+                    <div class="vote-action"><div><h4>사전 투표</h4><p>매주 월요일 11:55 ~ 금요일 23:59 · 계정당 하루 1회</p></div><a href="https://lnk.diggus.com/vote" target="_blank" rel="noopener noreferrer">디거스 ↗</a></div>
+                    <div class="vote-action"><div><h4>실시간 투표</h4><p>생방송 중 진행 · 계정당 최대 5표</p></div><a href="https://bit.ly/3tpKkxX" target="_blank" rel="noopener noreferrer">하이어 ↗</a></div>
+                    <div class="vote-action"><div><h4>핫스테이지</h4><p>매주 일요일 16:40 ~ 목요일 12:00 · 하루 5회</p></div><a href="https://bit.ly/3tpKkxX" target="_blank" rel="noopener noreferrer">하이어 ↗</a></div>
+                </article>
+                <article class="vote-card">
+                    <div class="vote-card-title"><img src="./images/icons/musiccore.svg" alt=""><div><span class="card-number">MBC · MUSIC CORE</span><h3>쇼! 음악중심</h3></div></div>
+                    <div class="vote-action"><div><h4>사전 투표</h4><p>매주 화요일 18:00 ~ 목요일 11:00 · 무제한 투표</p></div><a href="https://mubeat.tv/" target="_blank" rel="noopener noreferrer">뮤빗 ↗</a></div>
+                    <div class="vote-action"><div><h4>실시간 투표</h4><p>생방송 중 진행 · 계정당 최대 5표</p></div><a href="https://mubeat.tv/" target="_blank" rel="noopener noreferrer">뮤빗 ↗</a></div>
+                    <div class="vote-action"><div><h4>시청자 위원회</h4><p>선정된 시청자 위원만 참여할 수 있어요.</p></div><a href="https://program.imbc.com/musiccore" target="_blank" rel="noopener noreferrer">안내 ↗</a></div>
+                </article>
+                <article class="vote-card">
+                    <div class="vote-card-title"><img src="./images/icons/musicbank.webp" alt=""><div><span class="card-number">KBS · MUSIC BANK</span><h3>뮤직뱅크</h3></div></div>
+                    <div class="vote-action"><div><h4>사전 투표</h4><p>매주 일요일 15:00 ~ 수요일 11:00 · 무제한 투표</p></div><a href="https://allchart.smtn.kr/audition/sector/13" target="_blank" rel="noopener noreferrer">올차트 ↗</a></div>
+                </article>
+                <article class="vote-card">
+                    <div class="vote-card-title"><img src="./images/icons/mcountdown.webp" alt=""><div><span class="card-number">MNET · M COUNTDOWN</span><h3>엠카운트다운</h3></div></div>
+                    <div class="vote-action"><div><h4>사전 투표</h4><p>매주 토요일 00:00 ~ 월요일 23:00 · 기기당 계정 1개, 하루 5회</p></div><a href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO" target="_blank" rel="noopener noreferrer">Mnet Plus ↗</a></div>
+                    <div class="vote-action"><div><h4>실시간 투표</h4><p>생방송 중 진행 · 기기당 계정 1개, 하루 5회</p></div><a href="https://www.mnetplus.world/community/main?communityId=PzfktaFfF9GXMF1CBSnUO" target="_blank" rel="noopener noreferrer">Mnet Plus ↗</a></div>
+                </article>
+                <article class="vote-card">
+                    <div class="vote-card-title"><img src="./images/icons/showchampion.webp" alt=""><div><span class="card-number">MBC M · SHOW CHAMPION</span><h3>쇼 챔피언</h3></div></div>
+                    <div class="vote-action"><div><h4>사전 투표</h4><p>매주 금요일 20:00 ~ 월요일 15:00 · 무제한 투표</p></div><a href="https://promo-web.idolchamp.com/app_proxy.html" target="_blank" rel="noopener noreferrer">아이돌챔프 ↗</a></div>
+                </article>
             </div>
-
-            <div class="main_box vote_box" data-value="guide">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-check-to-slot"></i> <span>투표앱 사용 가이드</span>
-                </div>
-                <div class="guide_btn">
-                    <a href="#diggus"><img src="images/icons/diggus.png" title="디거스 (DIGGUS)"></a>
-                    <a href="#higher"><img src="images/icons/higher.png" title="하이어 (HIGHER)"></a>
-                    <a href="#mubeat"><img src="images/icons/mubeat.png" title="뮤빗 (MUBEAT)"></a>
-                    <a href="#allchart"><img src="images/icons/allchart.png" title="올차트 (ALL CHART)"></a>
-                    <a href="#mnet"><img src="images/icons/mnet.png" title="엠넷플러스 (MNET+)"></a>
-                    <a href="#idolchamp"><img src="images/icons/idolchamp.png" title="아이돌챔프 (IDOLCHAMP)"></a>
-                </div>
-                <h1 id="diggus"><img src="images/icons/diggus.png" class="app_icon"><span>디거스 (DIGGUS)</span></h1>
-                <div class="img_placeholder"></div>
-                <h1 id="higher"><img src="images/icons/higher.png" class="app_icon"><span>하이어 (HIGHER)</span></h1>
-                <img src="images/guides/higher_1.png">
-                <h1 id="mubeat"><img src="images/icons/mubeat.png" class="app_icon"><span>뮤빗 (MUBEAT)</span></h1>
-                <img src="images/guides/mubeat_1.jpg">
-                <img src="images/guides/mubeat_2.jpg">
-                <img src="images/guides/mubeat_3.png">
-                <h1 id="allchart"><img src="images/icons/allchart.png" class="app_icon"><span>올차트 (ALL CHART)</span>
-                </h1>
-                <img src="images/guides/allchart_1.png">
-                <h1 id="mnet"><img src="images/icons/mnet.png" class="app_icon"><span>엠넷플러스 (MNET+)</span></h1>
-                <img src="images/guides/mnet_1.png">
-                <h1 id="idolchamp"><img src="images/icons/idolchamp.png" class="app_icon"><span>아이돌챔프 (IDOLCHAMP)</span></h1>
-                <img src="images/guides/idolchamp_1.png">
-                <img src="images/guides/idolchamp_2.png">
+            <p class="guide-disclaimer">위 투표 일정과 횟수는 기존 JFU 안내 자료를 기준으로 옮겼습니다. 컴백 주간·방송 일정 등에 따라 달라질 수 있으니 투표 전 공식 앱에서 확인해 주세요.</p>
+        </section>
+        <section class="guide-section" id="vote-schedule">
+            <div class="section-heading"><div><p class="eyebrow">02 / WEEKLY SCHEDULE</p><h2>요일별 음악방송 일정표</h2></div></div>
+            <figure class="schedule-image"><img src="./images/guides/music_show_schedule.PNG" alt="음악방송 투표 요일별 일정표"></figure>
+            <div class="inline-actions"><a class="button button-outline" href="./todo.html">오늘의 투두리스트 <span aria-hidden="true">↗</span></a></div>
+        </section>
+        <section class="guide-section" id="vote-app-guides">
+            <div class="section-heading"><div><p class="eyebrow">03 / VOTING APPS</p><h2>투표앱 사용 가이드</h2></div></div>
+            <div class="guide-accordion">
+                <details class="guide-detail">
+                    <summary id="diggus"><img src="./images/icons/diggus.png" alt=""><span>디거스 <small>DIGGUS</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <p class="guide-detail-note">인기가요 사전 투표에 사용되는 앱입니다. 앱에서 인기가요 투표 메뉴와 참여 가능 시간을 확인해 주세요.</p>
+                </details>
+                <details class="guide-detail">
+                    <summary id="higher"><img src="./images/icons/higher.png" alt=""><span>하이어 <small>HIGHER</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <div class="guide-gallery"><figure><img src="./images/guides/higher_1.png" alt="하이어 투표 가이드"></figure></div>
+                </details>
+                <details class="guide-detail">
+                    <summary id="mubeat"><img src="./images/icons/mubeat.png" alt=""><span>뮤빗 <small>MUBEAT</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <div class="guide-gallery">
+                        <figure><img src="./images/guides/mubeat_1.jpg" alt="뮤빗 투표 가이드 1"></figure>
+                        <figure><img src="./images/guides/mubeat_2.jpg" alt="뮤빗 투표 가이드 2"></figure>
+                        <figure><img src="./images/guides/mubeat_3.png" alt="뮤빗 투표 가이드 3"></figure>
+                    </div>
+                </details>
+                <details class="guide-detail">
+                    <summary id="allchart"><img src="./images/icons/allchart.png" alt=""><span>올차트 <small>ALL CHART</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <div class="guide-gallery"><figure><img src="./images/guides/allchart_1.png" alt="올차트 투표 가이드"></figure></div>
+                </details>
+                <details class="guide-detail">
+                    <summary id="mnet"><img src="./images/icons/mnet.png" alt=""><span>엠넷플러스 <small>MNET+</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <div class="guide-gallery"><figure><img src="./images/guides/mnet_1.png" alt="엠넷플러스 투표 가이드"></figure></div>
+                </details>
+                <details class="guide-detail">
+                    <summary id="idolchamp"><img src="./images/icons/idolchamp.png" alt=""><span>아이돌챔프 <small>IDOLCHAMP</small></span><span class="summary-mark" aria-hidden="true">＋</span></summary>
+                    <div class="guide-gallery">
+                        <figure><img src="./images/guides/idolchamp_1.png" alt="아이돌챔프 투표 가이드 1"></figure>
+                        <figure><img src="./images/guides/idolchamp_2.png" alt="아이돌챔프 투표 가이드 2"></figure>
+                    </div>
+                </details>
             </div>
-        </div>
-
-        <div class="main_right">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-bookmark"></i> <span>투표 길잡이</span>
-                </div>
-                <a href="vote" class="btn_list"><i class="fa-solid fa-trophy"></i> 음악방송 사전/실시간 투표</a>
-                <a href="vote?p=guide" class="btn_list"><i class="fa-solid fa-check-to-slot"></i> 투표앱 사용 가이드</a>
-            </div>
-            <div class="main_box vote_box" data-value="broadcast">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-trophy"></i> <span>요일별 음악방송 투표 일정표</span>
-                </div>
-                <img src="images/guides/music_show_schedule.PNG" onclick="openImage('images/guides/music_show_schedule.PNG')" style="cursor: pointer;">
-            </div>
-        </div>
+        </section>
     </main>
-
-    <footer></footer>
-
-    <script>
-        init(window.location);
-        voteOpen();
-
-        function voteOpen() {
-            const params = new URLSearchParams(window.location.search);
-
-            let p = params.get('p');
-            if (p == null) {
-                p = 'broadcast';
-            }
-
-            for (var node of document.getElementsByClassName('vote_box')) {
-                if (node.getAttribute('data-value') == p) {
-                    node.setAttribute('style', 'display: block');
-                }
-            }
-        }
-
-        function openImage(url) {
-            let width = (window.screen.height / 19) * 12;
-            let height = window.screen.height;
-
-            let screenX = window.screenX || window.screenLeft;
-            let screenY = window.screenY || window.screenTop;
-            
-            window.open(url, '_blank', `width=${width},height=${height},left=${screenX},top=${screenY},noopener,noreferrer`);
-        }
-    </script>
+    <footer class="site-footer">
+        <a class="wordmark footer-wordmark" href="./"><span class="wordmark-mark">JFU</span><span class="wordmark-name">JISOO FAN UNION</span></a>
+        <p>언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합</p>
+        <span class="copyright">© 2023–2026 JISOO FAN UNION · ALL FOR BLACKPINK JISOO</span>
+        <a class="back-to-top" href="#" aria-label="페이지 맨 위로">↑</a>
+    </footer>
 </body>
+</html>

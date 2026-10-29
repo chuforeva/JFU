@@ -1,128 +1,85 @@
-<!DOCTYPE html>
-
+<!doctype html>
+<html lang="ko">
 <head>
-    <title>JISOO FAN UNION | 원클릭 스밍리스트</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script type="text/javascript" src="scripts/import.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
-    <meta property="og:title" content="JISOO FAN UNION | 원클릭 스밍리스트">
-    <meta property="og:description" content="언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080a10">
+    <meta name="description" content="멜론, 지니, 벅스, 바이브에서 지수의 음악을 원클릭으로 재생하세요.">
+    <title>ONE CLICK STREAMING — JISOO FAN UNION</title>
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/oneclick.js" defer></script>
 </head>
-
 <body>
-    <nav></nav>
-
-    <main>
-        <div class="main_left">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-circle-exclamation"></i> <span>주의사항</span>
-                </div>
-                <div id="oneclick_guide">
-                    <ul>
-                        <li>기존 재생목록 비우기</li>
-                        <li>재생목록 설정 → 중복곡 포함</li>
-                        <li>셔플 재생 끄기</li>
-                        <li>전체 반복 설정</li>
-                    </ul>
-                </div>
-                <div style="text-align: center;">
-                    <a href="guide?p=music_streaming" class="btn"><i class="fa-solid fa-headphones"></i> 음원 스트리밍 가이드</a>
-                    <a href="guide?p=music_download" class="btn"><i class="fa-solid fa-download"></i> 음원 다운로드 가이드</a>
-                    <!-- <a href="guide?p=music_present" class="btn"><i class="fa-solid fa-gift"></i> 음원 선물하기 가이드</a> -->
-                    <a href="http://m2.melon.com/buy/meloncash/charge.htm" class="btn" target="_blank"><i class="fa-solid fa-coins"></i> 멜론 캐시 충전</a>
-                </div>
+    <header class="site-header">
+        <a class="wordmark" href="./" aria-label="지수팬연합 홈"><span class="wordmark-mark">JFU</span><span class="wordmark-name">JISOO FAN UNION</span></a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기"><span></span><span></span></button>
+        <nav class="desktop-nav" id="primary-nav" aria-label="주요 메뉴"></nav>
+        <a class="header-link" href="https://x.com/Jisoo_Fan_Union" target="_blank" rel="noopener noreferrer"><span>X에서 소식 받아보기</span><span aria-hidden="true">↗</span></a>
+    </header>
+    <main class="page-main section-wrap">
+        <section class="page-intro">
+            <p class="eyebrow">PLAY JISOO, ONE CLICK AT A TIME</p>
+            <h1>ONE CLICK <em>STREAMING</em></h1>
+            <p>사용 중인 음원 앱과 기기에 맞는 버튼을 눌러 재생목록을 열어주세요.<br>앱이 설치되어 있지 않거나 링크가 열리지 않으면 각 음원 사이트에서 지수의 곡을 검색해 주세요.</p>
+        </section>
+        <section class="content-panel">
+            <div class="section-heading">
+                <div><p class="eyebrow">BEFORE YOU PLAY</p><h2>스밍 전 확인해 주세요</h2></div>
             </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-hand-pointer"></i> <span>원클릭 링크</span>
-                </div>
-
-                <h1><img src="images/icons/melon.png"
-                        class="app_icon"><span>멜론 (MELON)</span></h1>
-                <h3><i class="fa-solid fa-triangle-exclamation"></i> 안드로이드/PC: 1 - 4 까지 순서대로 누르기</h3>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-android"></i></span>
-                    <a href="melonapp://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,38557710,36331121" class="btn">1</a>
-                    <a href="melonapp://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,38557710,36331122" class="btn">2</a>
-                    <a href="melonapp://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,38557710,36331121" class="btn">3</a>
-                    <a href="melonapp://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,36331122,35640079" class="btn">4</a>
-                </div>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-apple"></i></span>
-                    <a href="meloniphone://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,38557710,36331121,38557707,38557708,38557709,38557710,36331122,38557707,38557708,38557709,38557710,36331121,38557707,38557708,38557709,36331122,35640079" class="btn">iPhone</a>
-                    <a href="melonipad://play?menuid=0&ctype=1&cid=38557707,38557708,38557709,38557710,36331121,38557707,38557708,38557709,38557710,36331122,38557707,38557708,38557709,38557710,36331121,38557707,38557708,38557709,36331122,35640079" class="btn">iPad</a>
-                </div>
-                <div class="oneclick_box">
-                    <span><i class="fa-solid fa-computer"></i></span>
-                    <a href="melonapp://play?cType=1&cList=38557707,38557708,38557709,38557710,36331121" class="btn">1</a>
-                    <a href="melonapp://play?cType=1&cList=38557707,38557708,38557709,38557710,36331122" class="btn">2</a>
-                    <a href="melonapp://play?cType=1&cList=38557707,38557708,38557709,38557710,36331121" class="btn">3</a>
-                    <a href="melonapp://play?cType=1&cList=38557707,38557708,38557709,36331122,35640079" class="btn">4</a>
-                </div>
-
-                <h1><img src="images/icons/genie.png"
-                        class="app_icon"><span>지니 (GENIE)</span></h1>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-android"></i></span>
-                    <a href="cromegenie://scan/?landing_type=31&landing_target=109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;109113034;101132629;109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;101132629;98314957" class="btn">Android</a>
-                </div>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-apple"></i></span>
-                    <a href="ktolleh00167://landing/?landing_type=31&landing_target=109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;109113034;101132629;109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;101132629;98314957" class="btn">iOS</a>
-                </div>
-                <div class="oneclick_box">
-                    <span><i class="fa-solid fa-computer"></i></span>
-                    <a href="https://www.genie.co.kr/player/shareProcessV2?xgnm=109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;109113034;101132629;109113031;109113032;109113033;109113034;101132628;109113031;109113032;109113033;101132629;98314957" class="btn">PC (WEB)</a>
-                </div>
-
-                <h1><img src="images/icons/bugs.png"
-                        class="app_icon"><span>벅스 (BUGS)</span></h1>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-android"></i></span>
-                    <a href="bugs3://app/tracks/lists?title=전체듣기&miniplay=Y&track_ids=6288184|6288185|6288186|6288187|6195057|6288184|6288185|6288186|6288187|6195058|6288184|6288185|6288186|6288187|6195057|6288184|6288185|6288186|6195058|6176181" class="btn">Android</a>
-                </div>
-
-                <h1><img src="images/icons/vibe.png"
-                        class="app_icon"><span>네이버 바이브 (VIBE)</span></h1>
-                <h3><i class="fa-solid fa-triangle-exclamation"></i> 안드로이드: 1 - 4 까지 순서대로 누르기</h3>
-                <div class="oneclick_box">
-                    <span><i class="fa-brands fa-android"></i></span>
-                    <a href="vibe://listen?version=3&trackIds=89603428,89603429,89603430,89603431,63275420" class="btn"> 1</a>
-                    <a href="vibe://listen?version=3&trackIds=89603428,89603429,89603430,89603431,63275421" class="btn">2</a>
-                    <a href="vibe://listen?version=3&trackIds=89603428,89603429,89603430,89603431,63275420" class="btn">3</a>
-                    <a href="vibe://listen?version=3&trackIds=89603428,89603429,89603430,63275421,57488472" class="btn">4</a>
-                </div>
-
+            <ul class="check-list">
+                <li>기존 재생목록을 비워주세요.</li>
+                <li>재생목록 설정에서 중복곡 포함을 선택해 주세요.</li>
+                <li>셔플 재생은 끄고, 전체 반복을 설정해 주세요.</li>
+            </ul>
+            <div class="inline-actions">
+                <a class="button button-outline" href="./guide.html#music-streaming">음원 스트리밍 가이드 <span aria-hidden="true">↗</span></a>
+                <a class="button button-outline" href="./guide.html#music-download">음원 다운로드 가이드 <span aria-hidden="true">↗</span></a>
             </div>
-        </div>
-
-        <div class="main_right">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-list"></i> <span>스밍리스트</span>
-                </div>
-                <img src="images/streaming_list.jpg">
+        </section>
+        <section class="release-feature" aria-labelledby="release-title" hidden>
+            <div class="release-feature-copy">
+                <p class="eyebrow" id="release-description"></p>
+                <h2 id="release-title"></h2>
             </div>
-        </div>
+            <img id="release-image" alt="">
+        </section>
+        <section class="streaming-platforms" aria-label="음원 앱별 원클릭 재생목록">
+            <article class="platform-card">
+                <div class="platform-heading"><img src="./images/icons/melon.png" alt=""><div><span class="card-number">01 / STREAMING APP</span><h2>멜론 <span>MELON</span></h2></div></div>
+                <p class="platform-note">Android·PC는 번호 순서대로 눌러주세요. iOS는 통합 재생목록을 선택할 수 있어요.</p>
+                <div class="platform-actions" data-platform="melon" aria-live="polite"></div>
+            </article>
+            <article class="platform-card">
+                <div class="platform-heading"><img src="./images/icons/genie.png" alt=""><div><span class="card-number">02 / STREAMING APP</span><h2>지니 <span>GENIE</span></h2></div></div>
+                <p class="platform-note">기기별 버튼을 누르면 지수 곡이 포함된 재생목록이 열립니다.</p>
+                <div class="platform-actions" data-platform="genie" aria-live="polite"></div>
+            </article>
+            <article class="platform-card">
+                <div class="platform-heading"><img src="./images/icons/bugs.png" alt=""><div><span class="card-number">03 / STREAMING APP</span><h2>벅스 <span>BUGS</span></h2></div></div>
+                <p class="platform-note">Android 앱에서 재생목록을 바로 열 수 있어요.</p>
+                <div class="platform-actions" data-platform="bugs" aria-live="polite"></div>
+            </article>
+            <article class="platform-card">
+                <div class="platform-heading"><img src="./images/icons/vibe.png" alt=""><div><span class="card-number">04 / STREAMING APP</span><h2>바이브 <span>VIBE</span></h2></div></div>
+                <p class="platform-note">Android는 1–4번을 순서대로 재생해 주세요.</p>
+                <div class="platform-actions" data-platform="vibe" aria-live="polite"></div>
+            </article>
+        </section>
+        <section class="content-panel playlist-panel" id="playlist-panel" hidden>
+            <div class="section-heading"><div><p class="eyebrow">PLAYLIST</p><h2>스밍리스트</h2></div></div>
+            <a class="playlist-image" id="playlist-image-link" target="_blank" rel="noopener noreferrer"><img id="playlist-image" alt="지수 응원 스트리밍 리스트"></a>
+        </section>
     </main>
-
-    <footer></footer>
-
-    <script>
-        init(window.location);
-    </script>
+    <footer class="site-footer">
+        <a class="wordmark footer-wordmark" href="./"><span class="wordmark-mark">JFU</span><span class="wordmark-name">JISOO FAN UNION</span></a>
+        <p>언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합</p>
+        <span class="copyright">© 2023–2026 JISOO FAN UNION · ALL FOR BLACKPINK JISOO</span>
+        <a class="back-to-top" href="#" aria-label="페이지 맨 위로">↑</a>
+    </footer>
 </body>
+</html>

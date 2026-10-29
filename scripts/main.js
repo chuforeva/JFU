@@ -1,80 +1,78 @@
-function convertToKorUnit(num) {
-    if (num == 0) return "0";
+const navigationItems = [
+    { href: "todo", label: "TO DO", page: "todo" },
+    { href: "oneclick?s=click", label: "ONE CLICK STREAMING", page: "oneclick" },
+    { href: "guide", label: "GUIDE", page: "guide" },
+    { href: "vote", label: "VOTE", page: "vote" }
+];
 
-    if (num < 10000) return String(num);
+const primaryNavigation = document.getElementById("primary-nav");
+const menuToggle = document.querySelector(".nav-toggle");
 
-    const units = ["", "만", "억"];
-    let unitIndex = 0;
-    let remain = num;
+if (primaryNavigation) {
+    const isNestedRoute = /\/(?:onclick|oneclick)\//i.test(window.location.pathname);
+    const pagePrefix = isNestedRoute ? "../" : "./";
+    const currentPage = window.location.pathname.match(/(?:^|\/)(todo|guide|vote|oneclick|onclick|click)(?:\.html)?\/?$/i)?.[1]?.toLowerCase();
 
-    while (remain > 10000) {
-        remain = remain / 10000;
-        unitIndex++;
-        if (unitIndex > 2) break;
-    }
-
-    return remain.toFixed(1) + units[unitIndex];
+    navigationItems.forEach(({ href, label, page }) => {
+        const link = document.createElement("a");
+        link.href = `${pagePrefix}${href}`;
+        link.textContent = label;
+        if (currentPage === page || (page === "oneclick" && ["click", "onclick"].includes(currentPage))) {
+            link.setAttribute("aria-current", "page");
+        }
+        primaryNavigation.append(link);
+    });
 }
 
-function sendSMS(code, text) {
-    if (navigator.platform == "iPhone") {
-        window.open(`sms:#${code}&body=${text}`);
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        const targetId = link.getAttribute('href');
+        if (targetId === '#') {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
 
-    } else if (navigator.platform == "Linux aarch64") {
-        window.open(`sms:%23${code}?body=${text}`);
+        const target = document.querySelector(targetId);
+        if (target) {
+            event.preventDefault();
+            const disclosure = target.closest("details");
+            if (disclosure) {
+                disclosure.open = true;
+            }
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
 
-    } else {
-        alert("모바일에서 버튼을 누르면 메세지창으로 이동합니다");
+function openHashDisclosure() {
+    if (window.location.hash.length < 2) {
+        return;
+    }
+
+    const hashTarget = document.getElementById(window.location.hash.slice(1));
+    const disclosure = hashTarget ? hashTarget.closest("details") : null;
+    if (disclosure) {
+        disclosure.open = true;
     }
 }
 
-function slider() {
-    const bannerContainer = document.querySelector(".banner");
-    const prevBtn = document.querySelector(".banner_nav.prev");
-    prevBtn.style.display = "none";
-    const nextBtn = document.querySelector(".banner_nav.next");
+openHashDisclosure();
+window.addEventListener("load", openHashDisclosure, { once: true });
 
-    const images = ["amortage_banner_1.jpeg", "amortage_banner_2.jpeg", "amortage_banner_3.png"];
-    const imagePath = "images/banners/";
-
-    for (let i of images) {
-        const img = document.createElement("img");
-        img.src = `${imagePath}${i}`;
-        bannerContainer.appendChild(img);
-    }
-
-    let currentIndex = 0;
-    const totalBanners = bannerContainer.children.length;
-    let autoSlideInterval;
-
-    function showSlide(index) {
-        if (index < 0) currentIndex = totalBanners - 1;
-        else if (index >= totalBanners) currentIndex = 0;
-        else currentIndex = index;
-
-        if (currentIndex > 0) prevBtn.style.display = "block";
-        else prevBtn.style.display = "none";
-        
-        if (currentIndex < totalBanners - 1) nextBtn.style.display = "block";
-        else nextBtn.style.display = "none";
-
-        bannerContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    function startAutoSlide() {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(() => showSlide(currentIndex + 1), 10000);
-    }
-
-    prevBtn.addEventListener("click", () => {
-        showSlide(currentIndex - 1);
-        startAutoSlide();
+if (menuToggle && primaryNavigation) {
+    menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        menuToggle.setAttribute("aria-label", isExpanded ? "메뉴 열기" : "메뉴 닫기");
+        primaryNavigation.classList.toggle("is-open", !isExpanded);
     });
 
-    nextBtn.addEventListener("click", () => {
-        showSlide(currentIndex + 1);
-        startAutoSlide();
+    primaryNavigation.addEventListener("click", (event) => {
+        if (event.target instanceof HTMLAnchorElement) {
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "메뉴 열기");
+            primaryNavigation.classList.remove("is-open");
+        }
     });
-
-    startAutoSlide();
 }

@@ -1,20 +1,40 @@
 let origin = window.location.origin;
+const archiveBase = window.location.pathname.startsWith('/backup/JFU_v1') ? '/backup/JFU_v1' : '';
+
+function getLocalPath(path) {
+    if (!path.endsWith('/') && !/\.[^/]+$/.test(path)) {
+        path += '.html';
+    }
+
+    return `${archiveBase}${path}`;
+}
 
 function init(loc) {
     insertNav(loc);
     insertMobileNav(loc);
     insertFooter();
+    normalizeLegacyLinks();
+}
+
+function normalizeLegacyLinks() {
+    const route = /^(\/?)(todo|guide|vote|oneclick|smsvote)(?=[?#]|$)/;
+    document.querySelectorAll('a[href]').forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href && route.test(href)) {
+            link.setAttribute('href', href.replace(route, '$1$2.html'));
+        }
+    });
 }
 
 function insertNav(loc) {
     var nav = document.getElementsByTagName('nav')[0];
 
     var logo_href = document.createElement('a');
-    logo_href.href = origin;
+    logo_href.href = `${origin}${getLocalPath('/')}`;
     logo_href.style = "text-decoration: none";
 
     var logo_1 = document.createElement('img');
-    logo_1.src = `${origin}/images/logos/JFU_logo_handwritten.png`;
+    logo_1.src = `${origin}${getLocalPath('/images/logos/JFU_logo_handwritten.png')}`;
     logo_1.id = "nav_logo_1";
     logo_href.appendChild(logo_1);
     nav.appendChild(logo_href);
@@ -40,14 +60,18 @@ function getNavBtn(loc, text, url, disabled=false) {
         btn.href = url;
         btn.target = '_blank';
     } else {
-        btn.href = origin + url;
+        btn.href = origin + getLocalPath(url);
     }
 
     if (disabled) {
         btn.classList.add('disabled');
         btn.href = 'javascript:void(0)';
-    } else if (window.location.origin + loc.pathname == origin + url) {
-        btn.classList.add('selected');
+    } else {
+        const currentPath = loc.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+        const targetPath = getLocalPath(url).replace(/\.html$/, '').replace(/\/$/, '');
+        if (window.location.origin + currentPath == origin + targetPath) {
+            btn.classList.add('selected');
+        }
     }
 
     return btn;
@@ -69,7 +93,7 @@ function insertMobileNav(loc) {
 function insertFooter() {
     var footer = document.getElementsByTagName('footer')[0];
     var img = document.createElement('img');
-    img.src = `${origin}/images/logos/JFU_logo_handwritten.png`;
+    img.src = `${origin}${getLocalPath('/images/logos/JFU_logo_handwritten.png')}`;
     var slogan = document.createElement('p');
     slogan.id = "slogan";
     slogan.innerHTML = "언제나 어디서나 뭘 하든,<br> 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합";

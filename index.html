@@ -1,160 +1,255 @@
-<!DOCTYPE html>
-
+<!doctype html>
+<html lang="ko">
 <head>
-    <title>JISOO FAN UNION</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="icon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script type="text/javascript" src="scripts/import.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
-    <script type="text/javascript" src="scripts/api.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.jpg">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1024">
-    <meta property="og:image:height" content="1024">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080a10">
+    <meta name="description" content="언제나 어디서나, 처음 만난 그날처럼. 지수팬연합의 응원 프로젝트와 팬 활동을 만나보세요.">
     <meta property="og:title" content="JISOO FAN UNION">
-    <meta property="og:description" content="언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합">
+    <meta property="og:description" content="All for BLACKPINK JISOO. 함께 응원하는 지수팬연합">
+    <meta property="og:image" content="https://www.jisoofanunion.com/images/logos/JFU_profile.jpg">
+    <title>JISOO FAN UNION — All for Jisoo</title>
+    <link rel="icon" href="./images/icon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/charts.js" defer></script>
+    <script src="./scripts/panels.js" defer></script>
 </head>
-
 <body>
-    <nav></nav>
-
-    <header>
-        <div id="header_youtube">
-            <iframe
-                src="https://www.youtube.com/embed/sf02ugzPFE4?autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playlist=sf02ugzPFE4&vq=hd1080"
-                title="JISOO COMING SOON" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;" allowfullscreen></iframe>
-        </div>
-        <!-- <div class="slider">
-            <div class="banner"></div>
-            <button class="banner_nav prev">&#10094;</button>
-            <button class="banner_nav next">&#10095;</button>
-        </div> -->
+    <header class="site-header">
+        <a class="wordmark" href="./" aria-label="지수팬연합 홈">
+            <span class="wordmark-mark">JFU</span>
+            <span class="wordmark-name">JISOO FAN UNION</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="메뉴 열기">
+            <span></span><span></span>
+        </button>
+        <nav class="desktop-nav" id="primary-nav" aria-label="주요 메뉴"></nav>
+        <a class="header-link" href="https://x.com/Jisoo_Fan_Union" target="_blank" rel="noopener noreferrer">
+            <span>X에서 소식 받아보기</span><span aria-hidden="true">↗</span>
+        </a>
     </header>
 
     <main>
-        <div class="main_left">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-star"></i> <span>즐겨찾기</span>
+        <section class="hero" id="about" aria-labelledby="hero-title">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-line"></span> ALL FOR BLACKPINK JISOO</p>
+                <h1 id="hero-title">언제나,<br>어디서나<br><em>뭘 하든,</em></h1>
+                <p class="hero-description">처음 만난 그날처럼 변함없이<br>지수를 사랑하는 <span style="color: #FF69B4; font-weight: bold;">지수팬연합</span></p>
+                <div class="hero-actions">
+                    <a class="button button-light" href="#projects">응원 함께하기 <span aria-hidden="true">↘</span></a>
+                    <a class="text-link" href="https://x.com/Jisoo_Fan_Union" target="_blank" rel="noopener noreferrer">지수팬연합 소식 <span aria-hidden="true">↗</span></a>
                 </div>
-                <div class="bookmarks" style="text-align: center;">
-                    <a href="todo" class="btn"><i class="fa-solid fa-check"></i> 투두리스트</a>
-                    <a href="click/" class="btn"><i class="fa-solid fa-hand-pointer"></i> 원클릭 스밍리스트</a>
-                    <a href="http://m2.melon.com/buy/meloncash/charge.htm" class="btn" target="_blank"><i
-                            class="fa-solid fa-coins"></i> 멜론 캐시 충전</a>
-                    <a href="https://kr.ktown4u.com/eventinfo?eve_no=42960748&biz_no=967" class="btn" target="_blank"><i
-                            class="fa-solid fa-compact-disc"></i> 앨범 공동구매</a><br>
-                    <a href="guide?p=music_streaming" style="margin-top: 1rem;"><img
-                            src="images/guides/thumbnails/streaming_guide.png"></a>
-                    <a href="guide?p=music_download"><img src="images/guides/thumbnails/download_guide.png"></a>
-                    <a href="guide?p=music_streaming#ios_guide"><img src="images/guides/thumbnails/ios_guide.png"></a>
-                    <a href="guide?p=streaming_plan"><img src="images/guides/thumbnails/streaming_plan.png"></a>
-                    <a href="vote"><img src="images/guides/thumbnails/vote_guide.png"></a>
-                    <a href="guide?p=video_streaming"><img src="images/guides/thumbnails/youtube_guide.png"></a>
-                </div>
+                <p class="hero-caption"><span class="live-dot"></span> ALWAYS WITH JISOO</p>
             </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-chart-simple"></i> <span>음원차트 차트인 현황</span>
-                </div>
-                <div id="melon_top100" class="chart_box">
-                    <div id="melon_header" class="chart_header"><a href="https://www.melon.com/chart/index.htm"
-                            target="_blank">멜론 TOP 100 <i class="fa-solid fa-chevron-right"></i></a>
-                        <div id="melon_time" class="chart_time"></div>
-                    </div>
-                </div>
-                <div id="melon_hot100" class="chart_box">
-                    <div id="melon_hot100_header" class="chart_header"><a href="https://www.melon.com/chart/hot100/index.htm"
-                            target="_blank">멜론 HOT 100 <i class="fa-solid fa-chevron-right"></i></a>
-                        <div id="melon_hot100_time" class="chart_time"></div>
-                    </div>
-                </div>
-                <div id="genie_realtime">
-                    <div id="genie_header" class="chart_header"><a href="https://www.genie.co.kr/chart/top200"
-                            target="_blank">지니 실시간 <i class="fa-solid fa-chevron-right"></i></a>
-                        <div id="genie_time" class="chart_time"></div>
-                    </div>
-                </div>
+            <div class="hero-art">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ZKupyV0lgqg?rel=0"
+                    title="JISOO 공식 YouTube 영상"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <span class="hero-index" aria-hidden="true">01 / JISOO</span>
+        </section>
+
+        <div class="ticker" aria-label="지수를 향한 변함없는 응원">
+            <div class="ticker-track">
+                <span>JISOO Digital Single</span>
+                <i aria-hidden="true">✦</i>
+                <span>[ADDICTED]</span>
+                <i aria-hidden="true">✦</i>
+                <span>2026.10.30</span>
+                <i aria-hidden="true">✦</i>
+                <span>8AM KST</span>
+                <i aria-hidden="true">✦</i>
             </div>
         </div>
 
-        <div class="main_right">
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-brands fa-youtube"></i> <span>유튜브 실시간 수치</span>
+        <section class="charts section-wrap" id="charts" aria-labelledby="charts-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">JISOO ON THE CHARTS</p>
+                    <h2 id="charts-title">음원차트 차트인 현황</h2>
                 </div>
-                <iframe src="https://www.youtube.com/embed/sf02ugzPFE4?autoplay=0&mute=0" title="JISOO COMING SOON"
-                    id="youtube_embed" frameborder="0" allowfullscreen></iframe>
-                <div id="youtube_view">조회수<span>10,000</span></div>
-                <div id="youtube_like">좋아요<span>2000</span></div>
-                <div id="youtube_comment">댓글<span>33333</span></div>
+                <p class="section-note">멜론과 지니 실시간 차트에서<br>지수의 곡 순위를 확인해요.</p>
             </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-heart"></i> <span>멜론 스트리밍 카드</span>
+            <div class="chart-grid">
+                <section class="chart-card" aria-labelledby="melon-top100-title">
+                    <div class="chart-card-heading">
+                        <div>
+                            <span class="chart-platform">MELON · DAILY</span>
+                            <h3 id="melon-top100-title">멜론 TOP 100</h3>
+                        </div>
+                        <a href="https://www.melon.com/chart/index.htm" target="_blank" rel="noopener noreferrer" aria-label="멜론 TOP 100 열기">↗</a>
+                    </div>
+                    <p class="chart-updated" id="melon-time">차트 정보를 불러오는 중입니다.</p>
+                    <div class="chart-entries" id="melon-top100" aria-live="polite" aria-busy="true"></div>
+                </section>
+                <section class="chart-card" aria-labelledby="melon-hot100-title">
+                    <div class="chart-card-heading">
+                        <div>
+                            <span class="chart-platform">MELON · HOT</span>
+                            <h3 id="melon-hot100-title">멜론 HOT 100</h3>
+                        </div>
+                        <a href="https://www.melon.com/chart/hot100/index.htm" target="_blank" rel="noopener noreferrer" aria-label="멜론 HOT 100 열기">↗</a>
+                    </div>
+                    <p class="chart-updated" id="melon-hot100-time">차트 정보를 불러오는 중입니다.</p>
+                    <div class="chart-entries" id="melon-hot100" aria-live="polite" aria-busy="true"></div>
+                </section>
+                <section class="chart-card" aria-labelledby="genie-realtime-title">
+                    <div class="chart-card-heading">
+                        <div>
+                            <span class="chart-platform">GENIE · REALTIME</span>
+                            <h3 id="genie-realtime-title">지니 실시간</h3>
+                        </div>
+                        <a href="https://www.genie.co.kr/chart/top200" target="_blank" rel="noopener noreferrer" aria-label="지니 실시간 차트 열기">↗</a>
+                    </div>
+                    <p class="chart-updated" id="genie-time">차트 정보를 불러오는 중입니다.</p>
+                    <div class="chart-entries" id="genie-realtime" aria-live="polite" aria-busy="true"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="live-panels section-wrap" aria-label="실시간 응원 정보">
+            <article class="live-panel" aria-labelledby="youtube-panel-title">
+                <div class="live-panel-heading">
+                    <div>
+                        <p class="eyebrow">YOUTUBE · LIVE STATS</p>
+                        <h2 id="youtube-panel-title">유튜브 실시간 수치</h2>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=sf02ugzPFE4" target="_blank" rel="noopener noreferrer" aria-label="유튜브 영상 열기">↗</a>
                 </div>
-                <div id="streaming_card">
-                    <div id="streaming_card_song"></div>
-                    <div id="streaming_card_artist"></div>
-                    <div id="streaming_card_detail">
-                        <div id="streaming_card_album_cover"></div>
-                        <div id="streaming_card_number">
-                            <div id="streaming_card_total_header">전체 스트리밍</div>
-                            <div id="streaming_card_total"></div>
-                            <div id="streaming_card_listener_header">전체 감상자</div>
-                            <div id="streaming_card_listener"></div>
+                <iframe
+                    class="live-video"
+                    src="https://www.youtube-nocookie.com/embed/sf02ugzPFE4?rel=0"
+                    title="JISOO 공식 YouTube 영상 실시간 수치"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+                <div class="live-stats" id="youtube-stats" aria-live="polite" aria-busy="true">
+                    <div class="live-stat"><span>조회수</span><strong id="youtube-views">불러오는 중</strong></div>
+                    <div class="live-stat"><span>좋아요</span><strong id="youtube-likes">불러오는 중</strong></div>
+                    <div class="live-stat"><span>댓글</span><strong id="youtube-comments">불러오는 중</strong></div>
+                </div>
+                <p class="panel-updated" id="youtube-updated"></p>
+                <p class="panel-error" id="youtube-error" role="status" hidden></p>
+            </article>
+
+            <article class="live-panel" aria-labelledby="melon-panel-title">
+                <div class="live-panel-heading">
+                    <div>
+                        <p class="eyebrow">MELON · STREAMING CARD</p>
+                        <h2 id="melon-panel-title">멜론 스트리밍 카드</h2>
+                    </div>
+                    <a href="https://www.melon.com/song/detail.htm?songId=602993117" target="_blank" rel="noopener noreferrer" aria-label="멜론 곡 정보 열기">↗</a>
+                </div>
+                <div class="streaming-card" id="streaming-card" aria-live="polite" aria-busy="true">
+                    <div class="streaming-cover" id="streaming-cover" aria-hidden="true"></div>
+                    <div class="streaming-content">
+                        <p class="streaming-song" id="streaming-song">불러오는 중</p>
+                        <p class="streaming-artist" id="streaming-artist"></p>
+                        <div class="streaming-counts">
+                            <div><span>전체 스트리밍</span><strong id="streaming-total">—</strong></div>
+                            <div><span>전체 감상자</span><strong id="streaming-listeners">—</strong></div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="main_box">
-                <div class="main_box_header">
-                    <i class="fa-solid fa-link"></i> <span>바로가기</span>
+                <p class="panel-updated" id="melon-updated"></p>
+                <p class="panel-error" id="melon-error" role="status" hidden></p>
+            </article>
+        </section>
+
+        <section class="projects section-wrap" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR SUPPORT, IN EVERY WAY</p>
+                    <h2 id="projects-title">함께 만드는 응원</h2>
                 </div>
-                <a href="https://x.com/Jisoo_Fan_Union" class="link_box" target="_blank">
-                    <i class="fa-brands fa-x-twitter"></i> 지수팬연합 X
+                <p class="section-note">필요한 응원 도구를 한곳에서<br>쉽고 빠르게 찾아보세요.</p>
+            </div>
+            <div class="project-grid">
+                <a class="project-card" href="./todo.html">
+                    <span class="card-number">01 / DAILY</span>
+                    <span class="card-icon" aria-hidden="true">↗</span>
+                    <h3>오늘의 투두리스트</h3>
+                    <p>요일별 투표와 응원 일정을 확인해요.</p>
+                    <span class="card-link">투두리스트 열기 <span aria-hidden="true">→</span></span>
                 </a>
-                <a href="https://www.youtube.com/@sooyaaa__" class="link_box" target="_blank">
-                    <i class="fa-brands fa-youtube"></i> 지수 유튜브
+                <a class="project-card" href="./oneclick.html?s=click">
+                    <span class="card-number">02 / STREAM</span>
+                    <span class="card-icon" aria-hidden="true">♪</span>
+                    <h3>원클릭 스밍</h3>
+                    <p>음원 앱별 재생목록으로 바로 이동해요.</p>
+                    <span class="card-link">스밍 시작하기 <span aria-hidden="true">→</span></span>
                 </a>
-                <a href="https://www.instagram.com/sooyaaa__/" class="link_box" target="_blank">
-                    <i class="fa-brands fa-instagram"></i> 지수 인스타
+                <a class="project-card" href="./guide.html">
+                    <span class="card-number">03 / GUIDE</span>
+                    <span class="card-icon" aria-hidden="true">✳</span>
+                    <h3>스밍 가이드</h3>
+                    <p>음원·뮤직비디오의 스밍 및 다운로드 방법을 확인해요.</p>
+                    <span class="card-link">가이드 보기 <span aria-hidden="true">→</span></span>
                 </a>
-                <a href="https://jisoo.io/" class="link_box" target="_blank">
-                    <i class="fa-solid fa-globe"></i> 지수 공홈
+                <a class="project-card" href="./vote.html">
+                    <span class="card-number">04 / VOTE</span>
+                    <span class="card-icon" aria-hidden="true">☆</span>
+                    <h3>음악방송 투표</h3>
+                    <p>방송별 투표 일정과 참여 링크를 모았어요.</p>
+                    <span class="card-link">투표 참여하기 <span aria-hidden="true">→</span></span>
                 </a>
             </div>
-        </div>
+        </section>
+
+        <section class="favorites section-wrap" aria-labelledby="favorites-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">QUICK LINKS</p>
+                    <h2 id="favorites-title">즐겨찾기</h2>
+                </div>
+                <p class="section-note">자주 찾는 응원 링크를<br>빠르게 이용해 보세요.</p>
+            </div>
+            <div class="favorite-links">
+                <a class="favorite-link" href="https://m2.melon.com/buy/meloncash/charge.htm" target="_blank" rel="noopener noreferrer">
+                    <span class="favorite-icon" aria-hidden="true">₩</span>
+                    <span class="favorite-copy"><strong>멜론 캐시 충전</strong><span>음원 스트리밍을 위한 캐시 충전</span></span>
+                    <span class="favorite-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="favorite-link" href="https://kr.ktown4u.com/eventinfo?eve_no=42960748&amp;biz_no=967" target="_blank" rel="noopener noreferrer">
+                    <span class="favorite-icon" aria-hidden="true">✦</span>
+                    <span class="favorite-copy"><strong>앨범 공동구매</strong><span>공동구매 페이지 바로가기</span></span>
+                    <span class="favorite-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="community section-wrap" id="community" aria-labelledby="community-title">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">STAY CLOSE, STAY WITH JISOO</p>
+                    <h2 id="community-title">지수의 소식 만나기</h2>
+                </div>
+                <p class="section-note">공식 채널과 지수팬연합에서<br>새로운 순간을 함께해요.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/Jisoo_Fan_Union" target="_blank" rel="noopener noreferrer"><span>X</span><span>지수팬연합</span><span aria-hidden="true">↗</span></a>
+                <a href="https://www.youtube.com/@sooyaaa__" target="_blank" rel="noopener noreferrer"><span>YT</span><span>JISOO YouTube</span><span aria-hidden="true">↗</span></a>
+                <a href="https://www.instagram.com/sooyaaa__/" target="_blank" rel="noopener noreferrer"><span>IG</span><span>JISOO Instagram</span><span aria-hidden="true">↗</span></a>
+                <a href="https://jisoo.io/" target="_blank" rel="noopener noreferrer"><span>J</span><span>JISOO Official</span><span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
+        <a class="wordmark footer-wordmark" href="./"><span class="wordmark-mark">JFU</span><span class="wordmark-name">JISOO FAN UNION</span></a>
+        <p>언제나 어디서나 뭘 하든, 처음 만난 그날처럼 변함없이 지수를 사랑하는 지수팬연합</p>
+        <span class="copyright">© 2023–2026 JISOO FAN UNION · ALL FOR BLACKPINK JISOO</span>
+        <a class="back-to-top" href="#" aria-label="페이지 맨 위로">↑</a>
     </footer>
-
-    <script>
-        init(window.location);
-
-        const video_id = 'sf02ugzPFE4';
-        const song_id = '602993117';
-        const melon_artists = ['995174'];
-        const genie_artists = ['80539782'];
-
-        getYouTubeRecord(video_id);
-        getStreamingCard(song_id);
-        getMelonTop100(melon_artists);
-        getMelonHot100(melon_artists);
-        getGenieRealTime(genie_artists);
-        slider();
-
-        if (!document.referrer || (document.referrer && !document.referrer.startsWith(window.location.origin))) {
-            popup();
-        }
-    </script>
 </body>
+</html>
