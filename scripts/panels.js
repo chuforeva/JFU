@@ -1,6 +1,6 @@
-const YOUTUBE_VIDEO_ID = "sf02ugzPFE4";
+const YOUTUBE_VIDEO_ID = "Pksr9T8m_aA";
 const YOUTUBE_API_KEY = "AIzaSyCU7SBb8KHuJkbmLODZ383oDttUeTOtYWI";
-const MELON_SONG_ID = "602993117";
+const MELON_SONG_ID = "603761119";
 const PANEL_REFRESH_INTERVAL = 60_000;
 
 const numberFormatter = new Intl.NumberFormat("ko-KR", {

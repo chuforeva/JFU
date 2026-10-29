@@ -1,6 +1,6 @@
 const navigationItems = [
     { href: "todo", label: "TO DO", page: "todo" },
-    { href: "oneclick?s=click", label: "ONE CLICK STREAMING", page: "oneclick" },
+    { href: "oneclick?s=addicted", label: "ONE CLICK STREAMING", page: "oneclick" },
     { href: "guide", label: "GUIDE", page: "guide" },
     { href: "vote", label: "VOTE", page: "vote" }
 ];
